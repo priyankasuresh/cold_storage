@@ -1,0 +1,112 @@
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background-color: #000000;
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0 0 35px;
+    text-transform: uppercase;
+    font-family: Roboto Condensed, sans-serif,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+a,p{
+    margin: 0 0 25px;
+    font-size: 15px;
+    line-height: 1.5;
+    color:#ffffff;
+}
+#container{
+  position: absolute;
+  width: 100%;
+}
+#intro{
+  position: relative;
+}
+#title{
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  margin-top: -147px;
+}
+#video{
+  position: relative;
+  width: 100%;
+  height: 773px;
+}
+#clip{
+  position: absolute;
+  width:100%;
+  bottom: 10%;
+}
+a.down{
+   background-color: #000000;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #ffffff;
+  top: 10%;
+  left: 95%;
+  position: absolute;
+  text-decoration: none;
+  z-index: 1;
+}
+a.up{
+  background-color: #000000;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid #ffffff;
+  top: 5%;
+  left: 95%;
+  position: absolute;
+  z-index: 1;
+  text-decoration: none;
+}
+#floor{
+  position: relative;
+  width: 100%
+}
+#plan{
+  position: relative;
+  width: 100%;
+  height: 90%;
+}
+#plan_img{
+  position: relative;
+  width: 100%;
+}
+#tracker{
+  position: relative;
+  top:95%;
+}
+.clips{
+  position: relative;
+  width: 3%;
+  height: 100%;
+}
+.boxes{
+
+}
+#box{
+  position: absolute;
+  width: 0.5%;
+  height: 1.5%;
+  background-color: #00ff00;
+  z-index: 1;
+}
+#scan{
+  position: absolute;
+  width: 1%;
+  height: 95%;
+  background-color: rgba(255,0,0,0.7);
+  z-index: 1;
+  /*box-shadow:20px 20px 50px 20px red;*/
+}
