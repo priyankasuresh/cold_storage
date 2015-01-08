@@ -59,12 +59,12 @@ function loadPlan(){
 	var tracker = document.createElement('div');
 	tracker.id = "tracker"
 
-	for(var i=1; i<28;i++){
-		var img = new Image();
-		img.src="clips/bw"+i+".jpg";
-		img.className="clips";
-		tracker.appendChild(img);
-	}
+	//for(var i=1; i<28;i++){
+	//	var img = new Image();
+	//	img.src="clips/bw"+i+".jpg";
+	//	img.className="clips";
+	//	tracker.appendChild(img);
+	//}
 
 	floor.appendChild(tracker);
 /*

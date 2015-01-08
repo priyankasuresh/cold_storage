@@ -16,24 +16,21 @@
 <body>
     <div id="video" style="width:1300px;margin:0px auto;">
         <video id="example_video_1" class="video-js vjs-default-skin"
-              controls width="1300px" height="600px"
+              controls playback="auto"  width="1300px" height="600px"
                poster="img/maindoc.png"
                data-setup='{"controls":true}' style="align:left">
             <source src="front_movie.mp4" type='video/mp4' />
         </video>
 <div class="barcode">
 <p>
-    <!--    <button id="playme">Play/Pause</button>-->
-        <input type="image" id="jump1" style="height:25px;width:100px;" src="img/Barcode_02.png" />
-        <input type="image" id="jump2" style="height:25px;width:150px;" src="img/Barcode_02.png" />
-        <input type="image" id="jump3" style="height:25px;width:100px;" src="img/Barcode_02.png" />
-        <input type="image" id="jump4" style="height:25px;width:170px;" src="img/Barcode_02.png" />
-        <input type="image" id="playme" style="height:25px;width:20px;" src="img/play.png" />
-        <input type="range" id="seek-bar" value="0">    
-        <input type="image" id="jump5" style="height:25px;width:100px;" src="img/Barcode_02.png" />
-        <input type="image" id="jump6" style="height:25px;width:170px;" src="img/Barcode_02.png" />
-        <input type="image" id="jump7" style="height:25px;width:120px;" src="img/Barcode_02.png" />
-        <input type="image" id="volume" style="height:25px;width:20px;" src="img/volume.png" />
+        <button id="playme">Play/Pause</button>
+        <input type="image" id="jump1" style="height:25px;width:70px;" src="img/Barcode_02.png" />
+        <input type="image" id="jump2" style="height:25px;width:120px;" src="img/Barcode_02.png" />
+        <input type="image" id="jump3" style="height:25px;width:90px;" src="img/Barcode_02.png" />
+        <input type="image" id="jump4" style="height:25px;width:100px;" src="img/Barcode_02.png" />
+        <input type="image" id="jump5" style="height:25px;width:120px;" src="img/Barcode_02.png" />
+        <input type="image" id="jump6" style="height:25px;width:70px;" src="img/Barcode_02.png" />
+        <input type="image" id="jump7" style="height:25px;width:70px;" src="img/Barcode_02.png" />
     </p>
     </div>
 <script>
@@ -46,7 +43,6 @@ var myvideo = document.getElementById('example_video_1'),
     jumplink5 = document.getElementById('jump5');
     jumplink6 = document.getElementById('jump6');
     jumplink7 = document.getElementById('jump7');
-    seekBar = document.getElementById("seek-bar");
 
 jumplink1.addEventListener("click", function (event) {
     event.preventDefault();
@@ -60,42 +56,42 @@ jumplink2.addEventListener("click", function (event) {
     event.preventDefault();
     myvideo.play();
     myvideo.pause();
-    myvideo.currentTime = 228;
+    myvideo.currentTime = 197;
     myvideo.play();
 }, false);
 jumplink3.addEventListener("click", function (event) {
     event.preventDefault();
     myvideo.play();
     myvideo.pause();
-    myvideo.currentTime = 384;
+    myvideo.currentTime = 443;
     myvideo.play();
 }, false);
 jumplink4.addEventListener("click", function (event) {
     event.preventDefault();
     myvideo.play();
     myvideo.pause();
-    myvideo.currentTime = 641;
+    myvideo.currentTime = 736;
     myvideo.play();
 }, false);
 jumplink5.addEventListener("click", function (event) {
     event.preventDefault();
     myvideo.play();
     myvideo.pause();
-    myvideo.currentTime = 1043;
+    myvideo.currentTime = 966;
     myvideo.play();
 }, false);
 jumplink6.addEventListener("click", function (event) {
     event.preventDefault();
     myvideo.play();
     myvideo.pause();
-    myvideo.currentTime = 1206;
+    myvideo.currentTime = 1187;
     myvideo.play();
 }, false);
 jumplink7.addEventListener("click", function (event) {
     event.preventDefault();
     myvideo.play();
     myvideo.pause();
-    myvideo.currentTime = 1378;
+    myvideo.currentTime = 0;
     myvideo.play();
 }, false);
 
@@ -107,38 +103,9 @@ playbutton.addEventListener("click", function () {
         myvideo.pause();
     }
 }, false);
-
-// Event listener for the seek bar
-seekBar.addEventListener("change", function() {
-  // Calculate the new time
-  var time = myvideo.duration * (seekBar.value / 100);
-
-  // Update the video time
-  myvideo.currentTime = time;
-});
-// Update the seek bar as the video plays
-myvideo.addEventListener("timeupdate", function() {
-  // Calculate the slider value
-  var value = (100 / myvideo.duration) * myvideo.currentTime;
-
-  // Update the slider value
-  seekBar.value = value;
-});
   </script>
   </div>
     <div id="container">
-        <div id="preview_info">
-        <p id="text_stuff"> 
-        HOVER OVER A LIST ITEM TO SCAN AND PREVIEW. CLICK TO VIEW</br>
-        1:11 TOUTE LE MEMOIRE DU MONDE</br>
-        1:32 THE GREAT FALL</br>
-        1:35 THE HARVARD DEPOSITORY</br>
-        1:40 KEITH LYSETH EXTENDED INTERVIEW</br>
-        1:50 PAT O'BRIEN EXTENDED INTERVIEW</br>
-        1:55 DRONE REEL</br>
-        2:05 WOODS REEL</br>
-        <p>
-        </div>
         <div id="intro">
             <div id ="title" style="text-align:center">
 

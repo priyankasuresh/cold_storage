@@ -16,11 +16,20 @@ h1,h2,h3,h4,h5,h6{
     color: #ffffff;
 }
 a,p{
-    margin: 0 0 25px;
+    margin: 5px 0 25px 115px;
     font-size: 15px;
     line-height: 1.5;
     color:#ffffff;
 }
+
+input{
+  background: white;
+}
+
+input:hover{
+  background:red;
+}
+
 #container{
   position: absolute;
   width: 100%;
@@ -43,6 +52,9 @@ a,p{
   position: absolute;
   width:100%;
   bottom: 10%;
+}
+#text_stuff{
+  left:150px;
 }
 a.down{
    background-color: #000000;
@@ -70,9 +82,13 @@ a.up{
   z-index: 1;
   text-decoration: none;
 }
+
 #floor{
   position: relative;
-  width: 100%
+  width: 1100px;
+  height: 325px;
+  top: 50px;
+  left: 150px;
 }
 #plan{
   position: relative;
@@ -87,11 +103,7 @@ a.up{
   position: relative;
   top:95%;
 }
-.clips{
-  position: relative;
-  width: 3%;
-  height: 100%;
-}
+
 .boxes{
 
 }
@@ -104,8 +116,8 @@ a.up{
 }
 #scan{
   position: absolute;
-  width: 1%;
-  height: 95%;
+  width: 0%;
+  height: 0%;
   background-color: rgba(255,0,0,0.7);
   z-index: 1;
   /*box-shadow:20px 20px 50px 20px red;*/

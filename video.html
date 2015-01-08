@@ -1,0 +1,100 @@
+ <!doctype html>
+<html>
+<head>
+    <title>Cold Storage</title>
+    <link href="//vjs.zencdn.net/4.1/video-js.css" rel="stylesheet">
+    <script src="//vjs.zencdn.net/4.1/video.js"></script>
+</head>
+<body>
+    <div style="width:700px;margin:0px auto;">
+        <video id="example_video_1" class="video-js vjs-default-skin"
+               controls preload="auto" width="470" height="264"
+               poster="toute.png"
+               data-setup='{"controls":true}' style="align:left">
+            <source src="toute.mp4" type='video/mp4' />
+        </video>
+<div>
+<p>
+        <input type="image" id="jump1" style="height:25px;width:70px;" src="Barcode_02.png" />
+        <input type="image" id="jump2" style="height:25px;width:60px;" src="Barcode_02.png" />
+        <input type="image" id="jump3" style="height:25px;width:70px;" src="Barcode_02.png" />
+        <input type="image" id="jump4" style="height:25px;width:50px;" src="Barcode_02.png" />
+        <input type="image" id="jump5" style="height:25px;width:70px;" src="Barcode_02.png" />
+        <input type="image" id="jump6" style="height:25px;width:50px;" src="Barcode_02.png" />
+        <input type="image" id="jump7" style="height:25px;width:70px;" src="Barcode_02.png" />
+    </p>
+    </div>
+<script>
+var myvideo = document.getElementById('example_video_1'),
+    playbutton = document.getElementById('playme'),
+    jumplink1 = document.getElementById('jump1');
+    jumplink2 = document.getElementById('jump2');
+    jumplink3 = document.getElementById('jump3');
+    jumplink4 = document.getElementById('jump4');
+    jumplink5 = document.getElementById('jump5');
+    jumplink6 = document.getElementById('jump6');
+    jumplink7 = document.getElementById('jump7');
+
+jumplink1.addEventListener("click", function (event) {
+    event.preventDefault();
+    myvideo.play();
+    myvideo.pause();
+    myvideo.currentTime = 0;
+    myvideo.play();
+}, false);
+
+jumplink2.addEventListener("click", function (event) {
+    event.preventDefault();
+    myvideo.play();
+    myvideo.pause();
+    myvideo.currentTime = 197;
+    myvideo.play();
+}, false);
+jumplink3.addEventListener("click", function (event) {
+    event.preventDefault();
+    myvideo.play();
+    myvideo.pause();
+    myvideo.currentTime = 443;
+    myvideo.play();
+}, false);
+jumplink4.addEventListener("click", function (event) {
+    event.preventDefault();
+    myvideo.play();
+    myvideo.pause();
+    myvideo.currentTime = 736;
+    myvideo.play();
+}, false);
+jumplink5.addEventListener("click", function (event) {
+    event.preventDefault();
+    myvideo.play();
+    myvideo.pause();
+    myvideo.currentTime = 966;
+    myvideo.play();
+}, false);
+jumplink6.addEventListener("click", function (event) {
+    event.preventDefault();
+    myvideo.play();
+    myvideo.pause();
+    myvideo.currentTime = 1187;
+    myvideo.play();
+}, false);
+jumplink7.addEventListener("click", function (event) {
+    event.preventDefault();
+    myvideo.play();
+    myvideo.pause();
+    myvideo.currentTime = 0;
+    myvideo.play();
+}, false);
+
+// only in to demonstrate video
+playbutton.addEventListener("click", function () {
+    if (myvideo.paused) {
+        myvideo.play();
+    } else {
+        myvideo.pause();
+    }
+}, false);
+  </script>
+  </div>
+</body>
+</html>
