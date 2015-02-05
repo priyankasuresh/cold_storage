@@ -40,13 +40,13 @@ function loadPlan(){
 	floor.appendChild(scroll_down);
 	floor.appendChild(scroll_up);
 
-	var floorImg = new Image();
+	/*var floorImg = new Image();
 	floorImg.id = 'plan_img';
 	floorImg.src = 'FloorPlan.png';
 	plan.appendChild(floorImg);
 	floor.appendChild(plan);
 
-	container.appendChild(floor);
+	container.appendChild(floor);*/
 
 	box(5,6);
 	box(47.75,50);

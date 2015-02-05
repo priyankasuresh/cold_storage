@@ -46,7 +46,23 @@
         <div class="cover"></div>  -->  
 
         </div>
+ 
+ <div class="floorplan" id="floorplan">
+			<h6 class="headingfp">Floor Plan of the Harvard Depository.</h6> 
+			<p>Another mode of navigating Cold Storage. Coming Soon.</p>
+			<div class="floorplan-imgs">
+				<img id="fp1" data-start="0" class="fp-section" src="./img/FloorplanNav/1_off.jpg">
+				<img id="fp2" data-start="224" class="fp-section" src="./img/FloorplanNav/2_off.jpg">
+				<img id="fp3" data-start="353" class="fp-section" src="./img/FloorplanNav/3_off.jpg">
+				<img id="fp4" data-start="613" class="fp-section" src="./img/FloorplanNav/4_off.jpg">
+				<img id="fp5" data-start="726" class="fp-section" src="./img/FloorplanNav/5_off.jpg">
+				<img id="fp6" data-start="1193" class="fp-section" src="./img/FloorplanNav/6_off.jpg">
+				<img id="fp7" data-start="1373" class="fp-section" src="./img/FloorplanNav/7_off.jpg">
+			</div>
         
+</div>
+
+       
         <div id="preview_info">
         	<h6>MODULE</h6>
         	<input id="chapters1" type="button" value="One"/>
@@ -113,13 +129,7 @@
 <a href="#" id='player-handwriting-title-five'></a>
 <a href="#" id='player-handwriting-title-six'></a>
 <a href="#" id='player-handwriting-title-seven'></a>
-<div class="floorplan" id="floorplan">
-        <h6 class="headingfp">Floor Plan of the Harvard Depository.</h6> 
-        <p>Another mode of navigating Cold Storage. Coming Soon.</p>
-        <div id="container">
-        <div id="intro">
-            <a href='#floor' class="down"></a>
-        </div></div></div>
+
         <div id="about">
     <h6>About</h6>
 
@@ -215,8 +225,49 @@ Indexical Fridge by Jun Wang</p>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
 <script>
-var myvideo = document.getElementById('example_video_1'),
-    playbutton = document.getElementById('playme'),
+
+
+$(".fp-section").click(function(e) {
+		event.preventDefault();
+    myvideo.play();
+    myvideo.pause();
+    myvideo.currentTime = $(e.target).attr("data-start");
+    myvideo.play();
+});
+
+document.getElementById('example_video_1').addEventListener('timeupdate',function(e){timeUpdateHandler(e);},false);
+var myvideo = document.getElementById('example_video_1');
+var currentModule = 0;
+function timeUpdateHandler(e) {
+	var t = myvideo.currentTime;
+	var module;
+	if(t < 224) { module = 1;	modulename = "one";}
+	else if(t< 353) { module = 2; modulename = "two";}
+	else if(t< 613) { module = 3; modulename = "three";}
+	else if(t< 726) { module = 4; modulename = "four";}
+	else if(t< 1193) { module = 5; modulename = "five";}
+	else if(t< 1373) { module = 6; modulename = "six";}
+	else {
+		module = 7;
+		modulename = "seven";
+	}
+	
+	if(module != currentModule) {
+		$("#fp"+currentModule).attr("src", "./img/FloorplanNav/"+currentModule+"_off.jpg");
+		currentModule = module;
+		console.log("MODULE CHANGE");
+		console.log("module "+currentModule);
+		console.log(modulename);
+		$("#fp"+currentModule).attr("src", "./img/FloorplanNav/"+currentModule+"_on.jpg");
+		$(".chapter").hide();
+    $("."+modulename).show();
+	}
+
+  var value = (100 / myvideo.duration) * myvideo.currentTime;
+
+}
+
+    var playbutton = document.getElementById('playme'),
     jumplink1 = document.getElementById('jump1');
     jumplink2 = document.getElementById('jump2');
     jumplink3 = document.getElementById('jump3');
@@ -225,6 +276,7 @@ var myvideo = document.getElementById('example_video_1'),
     jumplink6 = document.getElementById('jump6');
     jumplink7 = document.getElementById('jump7');
     seekBar = document.getElementById("seek-bar");
+
 
 jumplink1.addEventListener("click", function (event) {
     event.preventDefault();
@@ -295,6 +347,10 @@ seekBar.addEventListener("change", function() {
   myvideo.currentTime = time;
 });
 // Update the seek bar as the video plays
+
+
+
+
 myvideo.addEventListener("timeupdate", function() {
   // Calculate the slider value
   var value = (100 / myvideo.duration) * myvideo.currentTime;
@@ -302,6 +358,8 @@ myvideo.addEventListener("timeupdate", function() {
   // Update the slider value
   seekBar.value = value;
 });
+
+
   </script>
 
 <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>

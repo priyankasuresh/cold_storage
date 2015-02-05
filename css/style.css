@@ -16,6 +16,7 @@ header{
 }
 
 body {
+	font-family: 'Open sans', sans-serif;
   background-color: #000000;
   width: 1000px;
   margin-left: auto;
@@ -462,11 +463,15 @@ color: #FFFFFF; }
 }
 
 .floorplan{
-  width: 1000px;
+  width: 1030px;
 }
+
+.floorplan-imgs img:hover {
+	cursor: pointer;
+}
+
 #prev-bt{
   width: 100px;
-  font-family: 'sans-serif';
   font-size: 10px;
   color: #ffffff;
   cursor: pointer;
@@ -482,14 +487,14 @@ color: #FFFFFF; }
 .ptitle {
   color: #FFFFFF;
   width: 400px;
-  font-family: 'sans-serif';
+  
   font-size: 12px;
 
 }
 .pname {
   color: #FF0000;
   width: 400px;
-  font-family: 'sans-serif';
+  
   font-size: 12px;
 
 }
@@ -519,7 +524,6 @@ color: #FFFFFF; }
   width: 100px;
   float: right;
   text-align: right;
-  font-family: 'sans-serif';
   font-size: 10px;
   color: #ffffff;
   cursor: pointer;
