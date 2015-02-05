@@ -104,3 +104,1274 @@ function box(x,y){
 	box.style.top=y+'%';
 	floor.appendChild(box);
 }
+ //good stuff begins here 
+
+  //$.getJSON('data.json', function(data) {
+    //    var output="<ul>";
+      //  for (var i in data.vault) {
+        //    output+="<li>" + data.vault[i].chapterone + "</li>";
+        //}
+
+  //       output+="</ul>";
+  //       document.getElementById("chapter_one").innerHTML=output;
+  // });
+
+  //   $.getJSON('data.json', function(data) {
+  //       var output="<ul>";
+  //       for (var i in data.vault) {
+  //           output+="<li>" + data.vault[i].chaptertwo + "</li>";
+  //       }
+
+  //       output+="</ul>";
+  //       document.getElementById("chapter_two").innerHTML=output;
+  // });
+  //     $.getJSON('data.json', function(data) {
+  //       var output="<ul>";
+  //       for (var i in data.vault) {
+  //           output+="<li>" + data.vault[i].chapterthree + "</li>";
+  //       }
+
+  //       output+="</ul>";
+  //       document.getElementById("chapter_three").innerHTML=output;
+  // });
+  //       $.getJSON('data.json', function(data) {
+  //       var output="<ul>";
+  //       for (var i in data.vault) {
+  //           output+="<li>" + data.vault[i].chapterfour + "</li>";
+  //       }
+
+  //       output+="</ul>";
+  //       document.getElementById("chapter_four").innerHTML=output;
+  // });
+  //         $.getJSON('data.json', function(data) {
+  //       var output="<ul>";
+  //       for (var i in data.vault) {
+  //           output+="<li>" + data.vault[i].chapterfive + "</li>";
+  //       }
+
+  //       output+="</ul>";
+  //       document.getElementById("chapter_five").innerHTML=output;
+  // });
+  //           $.getJSON('data.json', function(data) {
+  //       var output="<ul>";
+  //       for (var i in data.vault) {
+  //           output+="<li>" + data.vault[i].chaptersix + "</li>";
+  //       }
+
+  //       output+="</ul>";
+  //       document.getElementById("chapter_six").innerHTML=output;
+  // });
+    $.getJSON('chone.json', function(chone) {
+    var clickedID=0;
+    var count=chone.firstch.length;
+    var firstIndex=0,lastIndex=0;
+    var $ul = $("<ul></ul>"); 
+//    document.getElementById('player-digital-image-one').innerHTML =  chone.firstch[clickedID].location ;     
+    $.each(chone.firstch,function(i,v) {
+        $ul.append(
+            $("<li></li>").append(                   
+            	$("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.location))
+            );
+        var index=i;
+        if(index==0)
+             firstIndex=v.itemid;
+        if(index==count-1)
+             lastIndex=v.itemid;
+    });
+
+    $("#player-handwriting-image").empty().append($ul);
+    
+     $("#player-handwriting-image a").click(function() {
+      var name = $(this).html(),
+          filename = $(this).attr("data-file");
+        $('#player-digital-image-one').html($(this).html());
+         clickedID=$(this).attr('href');
+         $('.tracks').removeClass('selected'); $('#'+clickedID+'_tracks').addClass('selected');
+        
+        return false;
+    }); 
+
+$("#next-bt").click(function() {
+    $('.tracks').removeClass('selected');
+     clickedID++;
+
+    if(clickedID>lastIndex)
+        clickedID=firstIndex;
+        $('#'+(clickedID)+'_tracks').addClass('selected');
+document.getElementById('player-digital-image-one').innerHTML =  chone.firstch[clickedID-1].location ;
+
+    
+    });
+
+$("#prev-bt").click(function() {
+      $('.tracks').removeClass('selected');
+  clickedID--;
+     if(clickedID<firstIndex)
+        clickedID=lastIndex;
+document.getElementById('player-digital-image-one').innerHTML =  chone.firstch[clickedID-1].location ;
+      $('#'+(clickedID)+'_tracks').addClass('selected');
+    
+    });
+
+
+});
+	$.getJSON('chone.json', function(chone) {
+    var clickedID=0;
+    var count=chone.firstch.length;
+    var firstIndex=0,lastIndex=0;
+    var $ul = $("<ul></ul>"); 
+  //  document.getElementById('player-digital-name-one').innerHTML =  chone.firstch[clickedID].itemtitle ;      
+    $.each(chone.firstch,function(i,v) {
+        $ul.append(
+            $("<li></li>").append(                   
+            	$("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.itemtitle))
+            );
+        var index=i;
+        if(index==0)
+             firstIndex=v.itemid;
+        if(index==count-1)
+             lastIndex=v.itemid;
+    });
+
+    $("#player-handwriting-name").empty().append($ul);
+    
+     $("#player-handwriting-name a").click(function() {
+      var name = $(this).html(),
+          filename = $(this).attr("data-file");
+        $('#player-digital-name-one').html($(this).html());
+         clickedID=$(this).attr('href');
+         $('.tracks').removeClass('selected'); $('#'+clickedID+'_tracks').addClass('selected');
+        
+        return false;
+         
+    }); 
+
+$("#next-bt").click(function() {
+    $('.tracks').removeClass('selected');
+     clickedID++;
+
+    if(clickedID>lastIndex)
+        clickedID=firstIndex;
+        $('#'+(clickedID)+'_tracks').addClass('selected');
+document.getElementById('player-digital-name-one').innerHTML =  chone.firstch[clickedID-1].itemtitle ;
+
+    
+    });
+
+$("#prev-bt").click(function() {
+      $('.tracks').removeClass('selected');
+  clickedID--;
+     if(clickedID<firstIndex)
+        clickedID=lastIndex;
+document.getElementById('player-digital-name-one').innerHTML =  chone.firstch[clickedID-1].itemtitle ;
+      $('#'+(clickedID)+'_tracks').addClass('selected');
+    
+    });
+
+
+});
+      	
+  	$.getJSON('chone.json', function(chone) {
+    var clickedID=0;
+    var count=chone.firstch.length;
+    var firstIndex=0,lastIndex=0;
+    var $ul = $("<ul></ul>");  
+    //document.getElementById('player-digital-title-one').innerHTML =  chone.firstch[clickedID].description ;
+    //clickedID++;     
+    $.each(chone.firstch,function(i,v) {
+        $ul.append(
+            $("<li></li>").append(                   
+            	$("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.description))
+            );
+        var index=i;
+        if(index==0)
+             firstIndex=v.itemid;
+        if(index==count-1)
+             lastIndex=v.itemid;
+    });
+
+    $("#player-handwriting-title").empty().append($ul);
+    
+     $("#player-handwriting-title a").click(function() {
+      var name = $(this).html(),
+          filename = $(this).attr("data-file");
+        $('#player-digital-title-one').html($(this).html());
+         clickedID=$(this).attr('href');
+         $('.tracks').removeClass('selected'); $('#'+clickedID+'_tracks').addClass('selected');
+        
+        return false;
+         
+    }); 
+
+$("#next-bt").click(function() {
+    $('.tracks').removeClass('selected');
+     clickedID++;
+
+    if(clickedID>lastIndex)
+        clickedID=firstIndex;
+        $('#'+(clickedID)+'_tracks').addClass('selected');
+document.getElementById('player-digital-title-one').innerHTML =  chone.firstch[clickedID-1].description ;
+
+    
+    });
+
+$("#prev-bt").click(function() {
+      $('.tracks').removeClass('selected');
+  clickedID--;
+     if(clickedID<firstIndex)
+        clickedID=lastIndex;
+document.getElementById('player-digital-title-one').innerHTML =  chone.firstch[clickedID-1].description ;
+      $('#'+(clickedID)+'_tracks').addClass('selected');
+    
+    });
+
+
+});
+//TWO
+
+    $.getJSON('chtwo.json', function(chtwo) {
+    var clickedID=0;
+    var count=chtwo.secondch.length;
+    var firstIndex=0,lastIndex=0;
+    var $ul = $("<ul></ul>");
+  //document.getElementById('player-digital-image-two').innerHTML =  chtwo.secondch[clickedID].location ;       
+    $.each(chtwo.secondch,function(i,v) {
+        $ul.append(
+            $("<li></li>").append(                   
+            	$("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.location))
+            );
+        var index=i;
+        if(index==0)
+             firstIndex=v.itemid;
+        if(index==count-1)
+             lastIndex=v.itemid;
+    });
+
+    $("#player-handwriting-image").empty().append($ul);
+    
+     $("#player-handwriting-image a").click(function() {
+      var name = $(this).html(),
+          filename = $(this).attr("data-file");
+        $('#player-digital-image-two').html($(this).html());
+         clickedID=$(this).attr('href');
+         $('.tracks').removeClass('selected'); $('#'+clickedID+'_tracks').addClass('selected');
+        
+        return false;
+         
+    }); 
+
+$("#next-bt").click(function() {
+    $('.tracks').removeClass('selected');
+     clickedID++;
+
+    if(clickedID>lastIndex)
+        clickedID=firstIndex;
+        $('#'+(clickedID)+'_tracks').addClass('selected');
+document.getElementById('player-digital-image-two').innerHTML =  chtwo.secondch[clickedID-1].location ;
+
+    
+    });
+
+$("#prev-bt").click(function() {
+      $('.tracks').removeClass('selected');
+  clickedID--;
+     if(clickedID<firstIndex)
+        clickedID=lastIndex;
+document.getElementById('player-digital-image-two').innerHTML =  chtwo.secondch[clickedID-1].location ;
+      $('#'+(clickedID)+'_tracks').addClass('selected');
+    
+    });
+
+
+});
+	$.getJSON('chtwo.json', function(chtwo) {
+    var clickedID=0;
+    var count=chtwo.secondch.length;
+    var firstIndex=0,lastIndex=0;
+    var $ul = $("<ul></ul>");
+  //  document.getElementById('player-digital-name-two').innerHTML =  chtwo.secondch[clickID].itemtitle ;       
+    $.each(chtwo.secondch,function(i,v) {
+        $ul.append(
+            $("<li></li>").append(                   
+            	$("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.itemtitle))
+            );
+        var index=i;
+        if(index==0)
+             firstIndex=v.itemid;
+        if(index==count-1)
+             lastIndex=v.itemid;
+    });
+
+    $("#player-handwriting-name").empty().append($ul);
+    
+     $("#player-handwriting-name a").click(function() {
+      var name = $(this).html(),
+          filename = $(this).attr("data-file");
+        $('#player-digital-name-two').html($(this).html());
+         clickedID=$(this).attr('href');
+         $('.tracks').removeClass('selected'); $('#'+clickedID+'_tracks').addClass('selected');
+        
+        return false;
+         
+    }); 
+
+$("#next-bt").click(function() {
+    $('.tracks').removeClass('selected');
+     clickedID++;
+
+    if(clickedID>lastIndex)
+        clickedID=firstIndex;
+        $('#'+(clickedID)+'_tracks').addClass('selected');
+document.getElementById('player-digital-name-two').innerHTML =  chtwo.secondch[clickedID-1].itemtitle ;
+
+    
+    });
+
+$("#prev-bt").click(function() {
+      $('.tracks').removeClass('selected');
+  clickedID--;
+     if(clickedID<firstIndex)
+        clickedID=lastIndex;
+document.getElementById('player-digital-name-two').innerHTML =  chtwo.secondch[clickedID-1].itemtitle ;
+      $('#'+(clickedID)+'_tracks').addClass('selected');
+    
+    });
+
+
+});
+      	
+  	$.getJSON('chtwo.json', function(chtwo) {
+    var clickedID=0;
+    var count=chtwo.secondch.length;
+    var firstIndex=0,lastIndex=0;
+    var $ul = $("<ul></ul>"); 
+    document.getElementById('player-digital-title-two').innerHTML =  chtwo.secondch[clickID].description ;      
+    $.each(chtwo.secondch,function(i,v) {
+        $ul.append(
+            $("<li></li>").append(                   
+            	$("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.description))
+            );
+        var index=i;
+        if(index==0)
+             firstIndex=v.itemid;
+        if(index==count-1)
+             lastIndex=v.itemid;
+    });
+
+    $("#player-handwriting-title").empty().append($ul);
+    
+     $("#player-handwriting-title a").click(function() {
+      var name = $(this).html(),
+          filename = $(this).attr("data-file");
+        $('#player-digital-title-two').html($(this).html());
+         clickedID=$(this).attr('href');
+         $('.tracks').removeClass('selected'); $('#'+clickedID+'_tracks').addClass('selected');
+        
+        return false;
+         
+    }); 
+
+$("#next-bt").click(function() {
+    $('.tracks').removeClass('selected');
+     clickedID++;
+
+    if(clickedID>lastIndex)
+        clickedID=firstIndex;
+        $('#'+(clickedID)+'_tracks').addClass('selected');
+document.getElementById('player-digital-title-two').innerHTML =  chtwo.secondch[clickedID-1].description ;
+
+    
+    });
+
+$("#prev-bt").click(function() {
+      $('.tracks').removeClass('selected');
+  clickedID--;
+     if(clickedID<firstIndex)
+        clickedID=lastIndex;
+document.getElementById('player-digital-title-two').innerHTML =  chtwo.secondch[clickedID-1].description ;
+      $('#'+(clickedID)+'_tracks').addClass('selected');
+    
+    });
+
+
+});
+
+//THREE
+
+    $.getJSON('chthree.json', function(chthree) {
+    var clickedID=0;
+    var count=chthree.thirdch.length;
+    var firstIndex=0,lastIndex=0;
+    var $ul = $("<ul></ul>");  
+//    document.getElementById('player-digital-image-three').innerHTML =  chthree.thirdch[clickID].location ;     
+    $.each(chthree.thirdch,function(i,v) {
+        $ul.append(
+            $("<li></li>").append(                   
+            	$("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.location))
+            );
+        var index=i;
+        if(index==0)
+             firstIndex=v.itemid;
+        if(index==count-1)
+             lastIndex=v.itemid;
+    });
+
+    $("#player-handwriting-image").empty().append($ul);
+    
+     $("#player-handwriting-image a").click(function() {
+      var name = $(this).html(),
+          filename = $(this).attr("data-file");
+        $('#player-digital-image-three').html($(this).html());
+         clickedID=$(this).attr('href');
+         $('.tracks').removeClass('selected'); $('#'+clickedID+'_tracks').addClass('selected');
+        
+        return false;
+         
+    }); 
+
+$("#next-bt").click(function() {
+    $('.tracks').removeClass('selected');
+     clickedID++;
+
+    if(clickedID>lastIndex)
+        clickedID=firstIndex;
+        $('#'+(clickedID)+'_tracks').addClass('selected');
+document.getElementById('player-digital-image-three').innerHTML =  chthree.thirdch[clickedID-1].location ;
+
+    
+    });
+
+$("#prev-bt").click(function() {
+      $('.tracks').removeClass('selected');
+  clickedID--;
+     if(clickedID<firstIndex)
+        clickedID=lastIndex;
+document.getElementById('player-digital-image-three').innerHTML =  chthree.thirdch[clickedID-1].location ;
+      $('#'+(clickedID)+'_tracks').addClass('selected');
+    
+    });
+
+
+});
+	$.getJSON('chthree.json', function(chthree) {
+    var clickedID=0;
+    var count=chthree.thirdch.length;
+    var firstIndex=0,lastIndex=0;
+    var $ul = $("<ul></ul>");  
+//    document.getElementById('player-digital-name-three').innerHTML =  chthree.thirdch[clickID].itemtitle ;      
+    $.each(chthree.thirdch,function(i,v) {
+        $ul.append(
+            $("<li></li>").append(                   
+            	$("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.itemtitle))
+            );
+        var index=i;
+        if(index==0)
+             firstIndex=v.itemid;
+        if(index==count-1)
+             lastIndex=v.itemid;
+    });
+
+    $("#player-handwriting-name").empty().append($ul);
+    
+     $("#player-handwriting-name a").click(function() {
+      var name = $(this).html(),
+          filename = $(this).attr("data-file");
+        $('#player-digital-name-three').html($(this).html());
+         clickedID=$(this).attr('href');
+         $('.tracks').removeClass('selected'); $('#'+clickedID+'_tracks').addClass('selected');
+        
+        return false;
+         
+    }); 
+
+$("#next-bt").click(function() {
+    $('.tracks').removeClass('selected');
+     clickedID++;
+
+    if(clickedID>lastIndex)
+        clickedID=firstIndex;
+        $('#'+(clickedID)+'_tracks').addClass('selected');
+document.getElementById('player-digital-name-three').innerHTML =  chthree.thirdch[clickedID-1].itemtitle ;    
+    });
+
+$("#prev-bt").click(function() {
+      $('.tracks').removeClass('selected');
+  clickedID--;
+     if(clickedID<firstIndex)
+        clickedID=lastIndex;
+document.getElementById('player-digital-name-three').innerHTML =  chthree.thirdch[clickedID-1].itemtitle ;
+      $('#'+(clickedID)+'_tracks').addClass('selected');
+    
+    });
+
+
+});
+      	
+  	$.getJSON('chthree.json', function(chthree) {
+    var clickedID=0;
+    var count=chthree.thirdch.length;
+    var firstIndex=0,lastIndex=0;
+    var $ul = $("<ul></ul>");   
+//    document.getElementById('player-digital-title-three').innerHTML =  chthree.thirdch[clickID].description ;     
+    $.each(chthree.thirdch,function(i,v) {
+        $ul.append(
+            $("<li></li>").append(                   
+            	$("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.description))
+            );
+        var index=i;
+        if(index==0)
+             firstIndex=v.itemid;
+        if(index==count-1)
+             lastIndex=v.itemid;
+    });
+
+    $("#player-handwriting-title").empty().append($ul);
+    
+     $("#player-handwriting-title a").click(function() {
+      var name = $(this).html(),
+          filename = $(this).attr("data-file");
+        $('#player-digital-title-three').html($(this).html());
+         clickedID=$(this).attr('href');
+         $('.tracks').removeClass('selected'); $('#'+clickedID+'_tracks').addClass('selected');
+        
+        return false;
+         
+    }); 
+
+$("#next-bt").click(function() {
+    $('.tracks').removeClass('selected');
+     clickedID++;
+
+    if(clickedID>lastIndex)
+        clickedID=firstIndex;
+        $('#'+(clickedID)+'_tracks').addClass('selected');
+document.getElementById('player-digital-title-three').innerHTML =  chthree.thirdch[clickedID-1].description ;
+
+    
+    });
+
+$("#prev-bt").click(function() {
+      $('.tracks').removeClass('selected');
+  clickedID--;
+     if(clickedID<firstIndex)
+        clickedID=lastIndex;
+document.getElementById('player-digital-title-three').innerHTML =  chthree.thirdch[clickedID-1].description ;
+      $('#'+(clickedID)+'_tracks').addClass('selected');
+    
+    });
+
+
+});
+
+//FOUR
+    $.getJSON('chfour.json', function(chfour) {
+    var clickedID=0;
+    var count=chfour.fourthch.length;
+    var firstIndex=0,lastIndex=0;
+    var $ul = $("<ul></ul>"); 
+//    document.getElementById('player-digital-image-four').innerHTML =  chfour.fourthch[clickID].location ;      
+    $.each(chfour.fourthch,function(i,v) {
+        $ul.append(
+            $("<li></li>").append(                   
+            	$("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.location))
+            );
+        var index=i;
+        if(index==0)
+             firstIndex=v.itemid;
+        if(index==count-1)
+             lastIndex=v.itemid;
+    });
+
+    $("#player-handwriting-image").empty().append($ul);
+    
+     $("#player-handwriting-image a").click(function() {
+      var name = $(this).html(),
+          filename = $(this).attr("data-file");
+        $('#player-digital-image-four').html($(this).html());
+         clickedID=$(this).attr('href');
+         $('.tracks').removeClass('selected'); $('#'+clickedID+'_tracks').addClass('selected');
+        
+        return false;
+         
+    }); 
+
+$("#next-bt").click(function() {
+    $('.tracks').removeClass('selected');
+     clickedID++;
+
+    if(clickedID>lastIndex)
+        clickedID=firstIndex;
+        $('#'+(clickedID)+'_tracks').addClass('selected');
+document.getElementById('player-digital-image-four').innerHTML =  chfour.fourthch[clickedID-1].location ;
+
+    
+    });
+
+$("#prev-bt").click(function() {
+      $('.tracks').removeClass('selected');
+  clickedID--;
+     if(clickedID<firstIndex)
+        clickedID=lastIndex;
+document.getElementById('player-digital-image-four').innerHTML =  chfour.fourthch[clickedID-1].location ;
+      $('#'+(clickedID)+'_tracks').addClass('selected');
+    
+    });
+
+
+});
+	$.getJSON('chfour.json', function(chfour) {
+    var clickedID=0;
+    var count=chfour.fourthch.length;
+    var firstIndex=0,lastIndex=0;
+    var $ul = $("<ul></ul>");
+//    document.getElementById('player-digital-name-four').innerHTML =  chfour.fourthch[clickID].itemtitle ;        
+    $.each(chfour.fourthch,function(i,v) {
+        $ul.append(
+            $("<li></li>").append(                   
+            	$("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.itemtitle))
+            );
+        var index=i;
+        if(index==0)
+             firstIndex=v.itemid;
+        if(index==count-1)
+             lastIndex=v.itemid;
+    });
+
+    $("#player-handwriting-name").empty().append($ul);
+    
+     $("#player-handwriting-name a").click(function() {
+      var name = $(this).html(),
+          filename = $(this).attr("data-file");
+        $('#player-digital-name-four').html($(this).html());
+         clickedID=$(this).attr('href');
+         $('.tracks').removeClass('selected'); $('#'+clickedID+'_tracks').addClass('selected');
+        
+        return false;
+         
+    }); 
+
+$("#next-bt").click(function() {
+    $('.tracks').removeClass('selected');
+     clickedID++;
+
+    if(clickedID>lastIndex)
+        clickedID=firstIndex;
+        $('#'+(clickedID)+'_tracks').addClass('selected');
+document.getElementById('player-digital-name-four').innerHTML =  chfour.fourthch[clickedID-1].itemtitle ;    
+    });
+
+$("#prev-bt").click(function() {
+      $('.tracks').removeClass('selected');
+  clickedID--;
+     if(clickedID<firstIndex)
+        clickedID=lastIndex;
+document.getElementById('player-digital-name-four').innerHTML =  chfour.fourthch[clickedID-1].itemtitle ;
+      $('#'+(clickedID)+'_tracks').addClass('selected');
+    
+    });
+
+
+});
+      	
+  	$.getJSON('chfour.json', function(chfour) {
+    var clickedID=0;
+    var count=chfour.fourthch.length;
+    var firstIndex=0,lastIndex=0;
+    var $ul = $("<ul></ul>");  
+//    document.getElementById('player-digital-title-four').innerHTML =  chfour.fourthch[clickID].description ;      
+    $.each(chfour.fourthch,function(i,v) {
+        $ul.append(
+            $("<li></li>").append(                   
+            	$("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.description))
+            );
+        var index=i;
+        if(index==0)
+             firstIndex=v.itemid;
+        if(index==count-1)
+             lastIndex=v.itemid;
+    });
+
+    $("#player-handwriting-title").empty().append($ul);
+    
+     $("#player-handwriting-title a").click(function() {
+      var name = $(this).html(),
+          filename = $(this).attr("data-file");
+        $('#player-digital-title-four').html($(this).html());
+         clickedID=$(this).attr('href');
+         $('.tracks').removeClass('selected'); $('#'+clickedID+'_tracks').addClass('selected');
+        
+        return false;
+         
+    }); 
+
+$("#next-bt").click(function() {
+    $('.tracks').removeClass('selected');
+     clickedID++;
+
+    if(clickedID>lastIndex)
+        clickedID=firstIndex;
+        $('#'+(clickedID)+'_tracks').addClass('selected');
+document.getElementById('player-digital-title-four').innerHTML =  chfour.fourthch[clickedID-1].description ;
+
+    
+    });
+
+$("#prev-bt").click(function() {
+      $('.tracks').removeClass('selected');
+  clickedID--;
+     if(clickedID<firstIndex)
+        clickedID=lastIndex;
+document.getElementById('player-digital-title-four').innerHTML =  chfour.fourthch[clickedID-1].description ;
+      $('#'+(clickedID)+'_tracks').addClass('selected');
+    
+    });
+});
+
+//FIVE
+    $.getJSON('chfive.json', function(chfive) {
+    var clickedID=0;
+    var count=chfive.fifthch.length;
+    var firstIndex=0,lastIndex=0;
+    var $ul = $("<ul></ul>"); 
+//    document.getElementById('player-digital-image-five').innerHTML =  chfive.fifthch[clickID].location ;      
+    $.each(chfive.fifthch,function(i,v) {
+        $ul.append(
+            $("<li></li>").append(                   
+            	$("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.location))
+            );
+        var index=i;
+        if(index==0)
+             firstIndex=v.itemid;
+        if(index==count-1)
+             lastIndex=v.itemid;
+    });
+
+    $("#player-handwriting-image").empty().append($ul);
+    
+     $("#player-handwriting-image a").click(function() {
+      var name = $(this).html(),
+          filename = $(this).attr("data-file");
+        $('#player-digital-image-five').html($(this).html());
+         clickedID=$(this).attr('href');
+         $('.tracks').removeClass('selected'); $('#'+clickedID+'_tracks').addClass('selected');
+        
+        return false;
+         
+    }); 
+
+$("#next-bt").click(function() {
+    $('.tracks').removeClass('selected');
+     clickedID++;
+
+    if(clickedID>lastIndex)
+        clickedID=firstIndex;
+        $('#'+(clickedID)+'_tracks').addClass('selected');
+document.getElementById('player-digital-image-five').innerHTML =  chfive.fifthch[clickedID-1].location ;
+
+    
+    });
+
+$("#prev-bt").click(function() {
+      $('.tracks').removeClass('selected');
+  clickedID--;
+     if(clickedID<firstIndex)
+        clickedID=lastIndex;
+document.getElementById('player-digital-image-five').innerHTML =  chfive.fifthch[clickedID-1].location ;
+      $('#'+(clickedID)+'_tracks').addClass('selected');
+    
+    });
+
+
+});
+	$.getJSON('chfive.json', function(chfive) {
+    var clickedID=0;
+    var count=chfive.fifthch.length;
+    var firstIndex=0,lastIndex=0;
+    var $ul = $("<ul></ul>"); 
+//    document.getElementById('player-digital-name-five').innerHTML =  chfive.fifthch[clickID].itemtitle ;      
+    $.each(chfive.fifthch,function(i,v) {
+        $ul.append(
+            $("<li></li>").append(                   
+            	$("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.itemtitle))
+            );
+        var index=i;
+        if(index==0)
+             firstIndex=v.itemid;
+        if(index==count-1)
+             lastIndex=v.itemid;
+    });
+
+    $("#player-handwriting-name").empty().append($ul);
+    
+     $("#player-handwriting-name a").click(function() {
+      var name = $(this).html(),
+          filename = $(this).attr("data-file");
+        $('#player-digital-name-five').html($(this).html());
+         clickedID=$(this).attr('href');
+         $('.tracks').removeClass('selected'); $('#'+clickedID+'_tracks').addClass('selected');
+        
+        return false;
+         
+    }); 
+
+$("#next-bt").click(function() {
+    $('.tracks').removeClass('selected');
+     clickedID++;
+
+    if(clickedID>lastIndex)
+        clickedID=firstIndex;
+        $('#'+(clickedID)+'_tracks').addClass('selected');
+document.getElementById('player-digital-name-five').innerHTML =  chfive.fifthch[clickedID-1].itemtitle ;    
+    });
+
+$("#prev-bt").click(function() {
+      $('.tracks').removeClass('selected');
+  clickedID--;
+     if(clickedID<firstIndex)
+        clickedID=lastIndex;
+document.getElementById('player-digital-name-five').innerHTML =  chfive.fifthch[clickedID-1].itemtitle ;
+      $('#'+(clickedID)+'_tracks').addClass('selected');
+    
+    });
+
+
+});
+      	
+  	$.getJSON('chfive.json', function(chfive) {
+    var clickedID=0;
+    var count=chfive.fifthch.length;
+    var firstIndex=0,lastIndex=0;
+    var $ul = $("<ul></ul>");  
+//    document.getElementById('player-digital-title-five').innerHTML =  chfive.fifthch[clickID].description ;     
+    $.each(chfive.fifthch,function(i,v) {
+        $ul.append(
+            $("<li></li>").append(                   
+            	$("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.description))
+            );
+        var index=i;
+        if(index==0)
+             firstIndex=v.itemid;
+        if(index==count-1)
+             lastIndex=v.itemid;
+    });
+
+    $("#player-handwriting-title").empty().append($ul);
+    
+     $("#player-handwriting-title a").click(function() {
+      var name = $(this).html(),
+          filename = $(this).attr("data-file");
+        $('#player-digital-title-five').html($(this).html());
+         clickedID=$(this).attr('href');
+         $('.tracks').removeClass('selected'); $('#'+clickedID+'_tracks').addClass('selected');
+        
+        return false;
+         
+    }); 
+
+$("#next-bt").click(function() {
+    $('.tracks').removeClass('selected');
+     clickedID++;
+
+    if(clickedID>lastIndex)
+        clickedID=firstIndex;
+        $('#'+(clickedID)+'_tracks').addClass('selected');
+document.getElementById('player-digital-title-five').innerHTML =  chfive.fifthch[clickedID-1].description ;
+
+    
+    });
+
+$("#prev-bt").click(function() {
+      $('.tracks').removeClass('selected');
+  clickedID--;
+     if(clickedID<firstIndex)
+        clickedID=lastIndex;
+document.getElementById('player-digital-title-five').innerHTML =  chfive.fifthch[clickedID-1].description ;
+      $('#'+(clickedID)+'_tracks').addClass('selected');
+    
+    });
+});
+//SIX
+    $.getJSON('chsix.json', function(chsix) {
+    var clickedID=0;
+    var count=chsix.sixthch.length;
+    var firstIndex=0,lastIndex=0;
+    var $ul = $("<ul></ul>");  
+//    document.getElementById('player-digital-image-six').innerHTML =  chsix.sixthch[clickID].location ;     
+    $.each(chsix.sixthch,function(i,v) {
+        $ul.append(
+            $("<li></li>").append(                   
+            	$("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.location))
+            );
+        var index=i;
+        if(index==0)
+             firstIndex=v.itemid;
+        if(index==count-1)
+             lastIndex=v.itemid;
+    });
+
+    $("#player-handwriting-image").empty().append($ul);
+    
+     $("#player-handwriting-image a").click(function() {
+      var name = $(this).html(),
+          filename = $(this).attr("data-file");
+        $('#player-digital-image-six').html($(this).html());
+         clickedID=$(this).attr('href');
+         $('.tracks').removeClass('selected'); $('#'+clickedID+'_tracks').addClass('selected');
+        
+        return false;
+         
+    }); 
+
+$("#next-bt").click(function() {
+    $('.tracks').removeClass('selected');
+     clickedID++;
+
+    if(clickedID>lastIndex)
+        clickedID=firstIndex;
+        $('#'+(clickedID)+'_tracks').addClass('selected');
+document.getElementById('player-digital-image-six').innerHTML =  chsix.sixthch[clickedID-1].location ;
+
+    
+    });
+
+$("#prev-bt").click(function() {
+      $('.tracks').removeClass('selected');
+  clickedID--;
+     if(clickedID<firstIndex)
+        clickedID=lastIndex;
+document.getElementById('player-digital-image-six').innerHTML =  chsix.sixthch[clickedID-1].location ;
+      $('#'+(clickedID)+'_tracks').addClass('selected');
+    
+    });
+
+
+});
+	$.getJSON('chsix.json', function(chsix) {
+    var clickedID=0;
+    var count=chsix.sixthch.length;
+    var firstIndex=0,lastIndex=0;
+    var $ul = $("<ul></ul>");  
+//    document.getElementById('player-digital-name-six').innerHTML =  chsix.sixthch[clickID].itemtitle ;     
+    $.each(chsix.sixthch,function(i,v) {
+        $ul.append(
+            $("<li></li>").append(                   
+            	$("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.itemtitle))
+            );
+        var index=i;
+        if(index==0)
+             firstIndex=v.itemid;
+        if(index==count-1)
+             lastIndex=v.itemid;
+    });
+
+    $("#player-handwriting-name").empty().append($ul);
+    
+     $("#player-handwriting-name a").click(function() {
+      var name = $(this).html(),
+          filename = $(this).attr("data-file");
+        $('#player-digital-name-six').html($(this).html());
+         clickedID=$(this).attr('href');
+         $('.tracks').removeClass('selected'); $('#'+clickedID+'_tracks').addClass('selected');
+        
+        return false;
+         
+    }); 
+
+$("#next-bt").click(function() {
+    $('.tracks').removeClass('selected');
+     clickedID++;
+
+    if(clickedID>lastIndex)
+        clickedID=firstIndex;
+        $('#'+(clickedID)+'_tracks').addClass('selected');
+document.getElementById('player-digital-name-six').innerHTML =  chsix.sixthch[clickedID-1].itemtitle ;    
+    });
+
+$("#prev-bt").click(function() {
+      $('.tracks').removeClass('selected');
+  clickedID--;
+     if(clickedID<firstIndex)
+        clickedID=lastIndex;
+document.getElementById('player-digital-name-six').innerHTML =  chsix.sixthch[clickedID-1].itemtitle ;
+      $('#'+(clickedID)+'_tracks').addClass('selected');
+    
+    });
+
+
+});
+      	
+  	$.getJSON('chsix.json', function(chsix) {
+    var clickedID=0;
+    var count=chsix.sixthch.length;
+    var firstIndex=0,lastIndex=0;
+    var $ul = $("<ul></ul>");   
+//    document.getElementById('player-digital-title-six').innerHTML =  chsix.sixthch[clickID].description ;    
+    $.each(chsix.sixthch,function(i,v) {
+        $ul.append(
+            $("<li></li>").append(                   
+            	$("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.description))
+            );
+        var index=i;
+        if(index==0)
+             firstIndex=v.itemid;
+        if(index==count-1)
+             lastIndex=v.itemid;
+    });
+
+    $("#player-handwriting-title").empty().append($ul);
+    
+     $("#player-handwriting-title a").click(function() {
+      var name = $(this).html(),
+          filename = $(this).attr("data-file");
+        $('#player-digital-title-six').html($(this).html());
+         clickedID=$(this).attr('href');
+         $('.tracks').removeClass('selected'); $('#'+clickedID+'_tracks').addClass('selected');
+        
+        return false;
+         
+    }); 
+
+$("#next-bt").click(function() {
+    $('.tracks').removeClass('selected');
+     clickedID++;
+
+    if(clickedID>lastIndex)
+        clickedID=firstIndex;
+        $('#'+(clickedID)+'_tracks').addClass('selected');
+document.getElementById('player-digital-title-six').innerHTML =  chsix.sixthch[clickedID-1].description ;
+
+    
+    });
+
+$("#prev-bt").click(function() {
+      $('.tracks').removeClass('selected');
+  clickedID--;
+     if(clickedID<firstIndex)
+        clickedID=lastIndex;
+document.getElementById('player-digital-title-six').innerHTML =  chsix.sixthch[clickedID-1].description ;
+      $('#'+(clickedID)+'_tracks').addClass('selected');
+    
+    });
+});
+
+//SEVEN
+$.getJSON('chseven.json', function(chseven) {
+    var clickedID=0;
+    var count=chseven.seventhch.length;
+    var firstIndex=0,lastIndex=0;
+    var $ul = $("<ul></ul>");    
+//    document.getElementById('player-digital-image-seven').innerHTML =  chseven.seventhch[clickID].location ;   
+    $.each(chseven.seventhch,function(i,v) {
+        $ul.append(
+            $("<li></li>").append(                   
+            	$("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.location))
+            );
+        var index=i;
+        if(index==0)
+             firstIndex=v.itemid;
+        if(index==count-1)
+             lastIndex=v.itemid;
+    });
+
+    $("#player-handwriting-image").empty().append($ul);
+    
+     $("#player-handwriting-image a").click(function() {
+      var name = $(this).html(),
+          filename = $(this).attr("data-file");
+        $('#player-digital-image-seven').html($(this).html());
+         clickedID=$(this).attr('href');
+         $('.tracks').removeClass('selected'); $('#'+clickedID+'_tracks').addClass('selected');
+        
+        return false;
+         
+    }); 
+
+$("#next-bt").click(function() {
+    $('.tracks').removeClass('selected');
+     clickedID++;
+
+    if(clickedID>lastIndex)
+        clickedID=firstIndex;
+        $('#'+(clickedID)+'_tracks').addClass('selected');
+document.getElementById('player-digital-image-seven').innerHTML =  chseven.seventhch[clickedID-1].location ;
+
+    
+    });
+
+$("#prev-bt").click(function() {
+      $('.tracks').removeClass('selected');
+  clickedID--;
+     if(clickedID<firstIndex)
+        clickedID=lastIndex;
+document.getElementById('player-digital-image-seven').innerHTML =  chseven.seventhch[clickedID-1].location ;
+      $('#'+(clickedID)+'_tracks').addClass('selected');
+    
+    });
+
+
+});
+	$.getJSON('chseven.json', function(chseven) {
+    var clickedID=0;
+    var count=chseven.seventhch.length;
+    var firstIndex=0,lastIndex=0;
+    var $ul = $("<ul></ul>");   
+//    document.getElementById('player-digital-name-seven').innerHTML =  chseven.seventhch[clickID].itemtitle ;    
+    $.each(chseven.seventhch,function(i,v) {
+        $ul.append(
+            $("<li></li>").append(                   
+            	$("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.itemtitle))
+            );
+        var index=i;
+        if(index==0)
+             firstIndex=v.itemid;
+        if(index==count-1)
+             lastIndex=v.itemid;
+    });
+
+    $("#player-handwriting-name").empty().append($ul);
+    
+     $("#player-handwriting-name a").click(function() {
+      var name = $(this).html(),
+          filename = $(this).attr("data-file");
+        $('#player-digital-name-seven').html($(this).html());
+         clickedID=$(this).attr('href');
+         $('.tracks').removeClass('selected'); $('#'+clickedID+'_tracks').addClass('selected');
+        
+        return false;
+         
+    }); 
+
+$("#next-bt").click(function() {
+    $('.tracks').removeClass('selected');
+     clickedID++;
+
+    if(clickedID>lastIndex)
+        clickedID=firstIndex;
+        $('#'+(clickedID)+'_tracks').addClass('selected');
+document.getElementById('player-digital-name-seven').innerHTML =  chseven.seventhch[clickedID-1].itemtitle ;    
+    });
+
+$("#prev-bt").click(function() {
+      $('.tracks').removeClass('selected');
+  clickedID--;
+     if(clickedID<firstIndex)
+        clickedID=lastIndex;
+document.getElementById('player-digital-name-seven').innerHTML =  chseven.seventhch[clickedID-1].itemtitle ;
+      $('#'+(clickedID)+'_tracks').addClass('selected');
+    
+    });
+
+
+});
+      	
+  	$.getJSON('chseven.json', function(chseven) {
+    var clickedID=0;
+    var count=chseven.seventhch.length;
+    var firstIndex=0,lastIndex=0;
+    var $ul = $("<ul></ul>"); 
+//    document.getElementById('player-digital-title-seven').innerHTML =  chseven.seventhch[clickID].description ;      
+    $.each(chseven.seventhch,function(i,v) {
+        $ul.append(
+            $("<li></li>").append(                   
+            	$("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.description))
+            );
+        var index=i;
+        if(index==0)
+             firstIndex=v.itemid;
+        if(index==count-1)
+             lastIndex=v.itemid;
+    });
+
+    $("#player-handwriting-title").empty().append($ul);
+    
+     $("#player-handwriting-title a").click(function() {
+      var name = $(this).html(),
+          filename = $(this).attr("data-file");
+        $('#player-digital-title-seven').html($(this).html());
+         clickedID=$(this).attr('href');
+         $('.tracks').removeClass('selected'); $('#'+clickedID+'_tracks').addClass('selected');
+        
+        return false;
+         
+    }); 
+
+$("#next-bt").click(function() {
+    $('.tracks').removeClass('selected');
+     clickedID++;
+
+    if(clickedID>lastIndex)
+        clickedID=firstIndex;
+        $('#'+(clickedID)+'_tracks').addClass('selected');
+document.getElementById('player-digital-title-seven').innerHTML =  chseven.seventhch[clickedID-1].description ;
+
+    
+    });
+
+$("#prev-bt").click(function() {
+      $('.tracks').removeClass('selected');
+  clickedID--;
+     if(clickedID<firstIndex)
+        clickedID=lastIndex;
+document.getElementById('player-digital-title-seven').innerHTML =  chseven.seventhch[clickedID-1].description ;
+      $('#'+(clickedID)+'_tracks').addClass('selected');
+    
+    });
+});
+
+//buttons to call vault items
+	    $(document).ready(function(){
+        $('input[type="button"]').click(function(){
+            if($(this).attr("value")=="One"){
+            	$(".chapter").hide();
+                $(".one").show();
+            }
+        });
+    });
+	    	    $(document).ready(function(){
+        $('input[type="button"]').click(function(){
+            if($(this).attr("value")=="Two"){
+            	$(".chapter").hide();
+                $(".two").show();
+            }
+        });
+    });
+	    	    	    	    $(document).ready(function(){
+        $('input[type="button"]').click(function(){
+            if($(this).attr("value")=="Three"){
+            	$(".chapter").hide();
+                $(".three").show();
+            }
+        });
+    });
+	    	    	    	    	    	    $(document).ready(function(){
+        $('input[type="button"]').click(function(){
+            if($(this).attr("value")=="Four"){
+                $(".chapter").hide();
+                $(".four").show();
+            }
+        });
+    });
+	    	    	    	    	    	    	    	    $(document).ready(function(){
+        $('input[type="button"]').click(function(){
+            if($(this).attr("value")=="Five"){
+                $(".chapter").hide();
+                $(".five").show();
+            }
+        });
+    });
+	    	    	    	    	    	    	    	    	    	    $(document).ready(function(){
+        $('input[type="button"]').click(function(){
+            if($(this).attr("value")=="Six"){
+                $(".chapter").hide();
+                $(".six").show();
+            }
+        });
+    });
+	   $(document).ready(function(){
+        $('input[type="button"]').click(function(){
+            if($(this).attr("value")=="Seven"){
+                $(".chapter").hide();
+                $(".seven").show();
+            }
+        });
+    });

@@ -3,39 +3,215 @@
 <head>
     <title>Cold Storage - An interactive documentary</title>
     <link href="css/style.css" rel="stylesheet">
-
     <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
     <script src="jquery-1.11.0.js"></script>
     <script type="text/javascript" src="snap.svg-min.js"></script>
-    <script type="text/javascript" src="Main.js" ></script>    
+    <script type="text/javascript" src="Main.js" ></script>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="all" href="css/magnific-popup.css">
 </head>
+    
+<body>
+    <header>
+    <h1>COLD STORAGE</h1>
+	<a href="#video"><h5>Film</h5></a>
+	<a href="#preview_info"><h5>Pickinglist</h5></a>
+	<a href="#floorplan"><h5>Vault</h5></a>
+	<a href="#about"><h5>About</h5></a>
+	<a href="#credits"><h5>Credits</h5></a>
+    </header>
+    <div id="video" style="width:1000px;margin:0px auto;">
 
-<body>
-<body>
-    <div id="video" style="width:1300px;margin:0px auto;">
-        <video id="example_video_1" class="video-js vjs-default-skin"
-              controls width="1300px" height="600px"
-               poster="img/maindoc.png"
-               data-setup='{"controls":true}' style="align:left">
+        <video id="example_video_1" class="video-js my-skin"
+            controls   width="1000px" height="600px"
+               poster="img/maindoc.png">
             <source src="front_movie.mp4" type='video/mp4' />
         </video>
-<div class="barcode">
+        </div>
+<!-- 		<div id="barcode">
+    	<button id="playme"></button></br>
+        <input type="image" id="jump1" src="img/Barcode_01.png" />
+        <input type="image" id="jump2" src="img/Barcode_02.png" />
+        <input type="image" id="jump3" src="img/Barcode_03.png" />
+        <input type="image" id="jump4" src="img/Barcode_04.png" />
+        <input type="image" id="jump5" src="img/Barcode_05.png" />
+        <input type="image" id="jump6" src="img/Barcode_06.png" />
+        <input type="image" id="jump7" src="img/Barcode_07.png" />
+        <input type="range" id="seek-bar" value="0">
+        <div class="cover"></div>  -->  
+
+        </div>
+        
+        <div id="preview_info">
+        	<h6>MODULE</h6>
+        	<input id="chapters1" type="button" value="One"/>
+        	<input id="chapters2" type="button" value="Two"/>
+        	<input id="chapters3" type="button" value="Three"/>
+        	<input id="chapters4" type="button" value="Four"/>
+        	<input id="chapters5" type="button" value="Five"/>
+        	<input id="chapters6" type="button" value="Six" />
+        	<input id="chapters7" type="button" value="Seven" />
+
+		<div class="navbutts"><a id="prev-bt">previous item</a><a id="next-bt">next item</a></div>
+
+			<div class="one chapter">
+			<div class="pexp">
+			<div id="player-digital-name-one" class="pname"></div>
+			<div id="player-digital-title-one" class="ptitle"></div></div>
+			<div id="player-digital-image-one" class="pimage"></div>
+			</div>
+			<div class="two chapter">
+			<div class="pexp">
+			<div id="player-digital-name-two" class="pname"></div>
+			<div id="player-digital-title-two" class="ptitle"></div></div>
+			<div id="player-digital-image-two" class="pimage"></div>
+			</div>
+			<div class="three chapter">
+			<div class="pexp">
+			<div id="player-digital-name-three" class="pname"></div>
+			<div id="player-digital-title-three" class="ptitle"></div></div>
+			<div id="player-digital-image-three" class="pimage"></div>
+			</div>
+			<div class="four chapter">
+			<div class="pexp">
+			<div id="player-digital-name-four" class="pname"></div>
+			<div id="player-digital-title-four" class="ptitle"></div></div>
+			<div id="player-digital-image-four" class="pimage"></div>
+			</div>
+			<div class="five chapter">
+			<div class="pexp">
+			<div id="player-digital-name-five" class="pname"></div>
+			<div id="player-digital-title-five" class="ptitle"></div></div>
+			<div id="player-digital-image-five" class="pimage"></div>
+			</div>
+			<div class="six chapter">
+			<div class="pexp">
+			<div id="player-digital-name-six" class="pname"></div>
+			<div id="player-digital-title-six" class="ptitle"></div></div>
+        	<div id="player-digital-image-six" class="pimage"></div>
+			</div>
+			<div class="seven chapter">
+			<div class="pexp">
+			<div id="player-digital-name-seven" class="pname"></div>
+			<div id="player-digital-title-seven" class="ptitle"></div></div>
+			<div id="player-digital-image-seven" class="pimage"></div>
+			</div>
+
+
+        </div>
+		        	
+        
+<a href="#" id='player-handwriting-title-one'></a>
+<a href="#" id='player-handwriting-title-two'></a>
+<a href="#" id='player-handwriting-title-three'></a>
+<a href="#" id='player-handwriting-title-four'></a>
+<a href="#" id='player-handwriting-title-five'></a>
+<a href="#" id='player-handwriting-title-six'></a>
+<a href="#" id='player-handwriting-title-seven'></a>
+<div class="floorplan" id="floorplan">
+        <h6 class="headingfp">Floor Plan of the Harvard Depository.</h6> 
+        <p>Another mode of navigating Cold Storage. Coming Soon.</p>
+        <div id="container">
+        <div id="intro">
+            <a href='#floor' class="down"></a>
+        </div></div></div>
+        <div id="about">
+    <h6>About</h6>
+
+<p>Cold Storage is a 24-minute documentary short film interlinked with an expanding collection of intertextual media artifacts, an archive of experiments and experiences in and around the Harvard Depository (“HD”), Harvard’s off-site library storage facility. Taken together, the film and its associated media collection explore how libraries have changed from the “shrines to knowledge” of the past to the evolving networks that interconnect vast warehouses and patrons of the present. By looking at objects as varied as books, databases, and air-conditioning systems, what conversations about libraries of the future may be prompted? </br>
+</br>
+<b>The Library Beyond the Book</b></br>
+
+Co-written by Jeffrey Schnapp and Matthew Battles, The Library Beyond the Book combines a deep study of the library’s history with reflections and provocations for thinking about the future of libraries, in part drawing from their research initiatives at metaLAB. The film takes its name from the closing chapter of the book, Cold Storage, which is based upon an initial media reconnaissance mission to the Harvard Depository. It was also in this encounter that the impulse to dialogue with Alain Resnais’ Toute la mémoire du monde was born. </br>
+</br>
+<b>Humanities Studio I : Cold Storage</b></br>
+</br>
+In the Spring of 2014, the metaLAB team taught its first course under the “humanities studio” rubric, combining a traditional humanities class experience with a making and process-based critical studio environment. Existing outside any single school or department, the course encouraged interdisciplinary enrollment, which resulted in a class composed of undergraduates, students from Harvard’s Graduate School of Design, a student from the Graduate School of Education, and a cross-enrollment from MIT. </br>
+</br>
+Starting from a series of storyboards imagining the journey of a book from the stacks to the hands of library patrons, the students and the teaching team then embarked on a series of field trips to the Harvard Depository site in Southborough—first creating a collective repository of photographs from which to develop more illustrated storyboards and eventually video and audio documentation that, while also shared to a degree, targeted students’ individual production and editing capacities. While most student projects were based in video, a preliminary set of wireframes envisioning what this website might look like and a sound-mapping of the facility with wireframes for a corresponding interface were also developed in the context of the class. </br>
+</br>
+</div>
+
+<div id="credits">
+<h6>Credits</h6></br>
 <p>
-    <!--    <button id="playme">Play/Pause</button>-->
-        <input type="image" id="jump1" style="height:25px;width:100px;" src="img/Barcode_02.png" />
-        <input type="image" id="jump2" style="height:25px;width:150px;" src="img/Barcode_02.png" />
-        <input type="image" id="jump3" style="height:25px;width:100px;" src="img/Barcode_02.png" />
-        <input type="image" id="jump4" style="height:25px;width:170px;" src="img/Barcode_02.png" />
-        <input type="image" id="playme" style="height:25px;width:20px;" src="img/play.png" />
-        <input type="range" id="seek-bar" value="0">    
-        <input type="image" id="jump5" style="height:25px;width:100px;" src="img/Barcode_02.png" />
-        <input type="image" id="jump6" style="height:25px;width:170px;" src="img/Barcode_02.png" />
-        <input type="image" id="jump7" style="height:25px;width:120px;" src="img/Barcode_02.png" />
-        <input type="image" id="volume" style="height:25px;width:20px;" src="img/volume.png" />
-    </p>
-    </div>
+<b>The Film</b></br>
+</br>
+Jeffrey Schnapp - Concept, Producer, Writer, Narrator</br>
+Cristoforo Magliozzi - Director, Director of Photography, Editor</br>
+Matthew Battles - Executive Producer</br>
+Peter McMurray - Line Producer, Production Sound</br>
+</br>
+The film comments upon and explores ideas expressed in the 1956 film,
+Toute la mémoire du monde, directed by Alain Resnais, and incorporates 
+audio, video, and narrative text from that work. </br>
+</br>
+The film incorporates video clips from The Harvard Depository, a short made
+by the Harvard University Library. President and Fellows of Harvard College, 1993.</br>
+</br>
+Footage of clouds by Beachfront Broll, and licensed under a Creative Commons Attribution 3.0 License. The footage has been altered from its original version. </br>
+</br>
+<b>The Music</b></br>
+</br>
+    Chris Barone</br>
+    Jeremy Galloway</br>
+    Austin McMahon</br>
+    Matt McMurray</br>
+    Tamar Sella</br>
+</br>
+“Plastic Mind (Honky Tonk Project Cinematic Mix)” by Sound Spread</br>
+“White Prickly Poppy” by Aaron Russell</br>
+“Forest of Diodes” by Red Fog</br>
+“Train Jacker” by Room of Wires</br>
+“A Sealed Night (Ambient)” by Moby</br>
+</br>
+<b>Special Thanks</b></br>
+</br>
+Keith Lyseth</br>
+Dan Moulton</br>
+Pat O’Brien</br>
+Matthew Sheehy</br>
+Seth Torres</br>
+Sarah Thomas</br>
+Sidney Verba</br>
+Cyberlaw Clinic at the Berkman Center for Internet and Society</br>
+The Harvard Depository Staff</br>
+The Harvard Media Production Center Staff</br>
+The Students of Humanities Studio I</br>
+</br>
+<b>We Would Also Like to Thank</b></br>
+</br>
+Ebru Boyaci </br>
+Stefano Canzio</br>
+Krystelle Denis</br>
+Isabelle DeSisto</br>
+Brianna MacGregor</br>
+Tim Maly</br>
+Ivan Sigal </br>
+Priyanka Suresh </br>
+James Yamada</br>
+Jessica Yurkovsky</br>
+</br>
+Dédié à Alain Resnais </br>
+1922-2014</br>
+</br>
+<b>The Website</b></br>
+</br>
+In addition to materials generated by the production team, provided by the Harvard Library, and copied with permission from the Harvard Archives, the website also features the following student projects:</br>
+</br>
+9006 by Marshall Ford</br>
+Re[C]ompos[S]ed by Claire Doussard</br>
+Bridging the Border - Transferring HD Materials by Allison Goffman</br>
+The Harvard Depository by Peter Kirschman</br>
+Metadata by Joyce Liu</br>
+Color in HD by Jennifer Mills</br>
+Indexical Fridge by Jun Wang</p>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
 <script>
 var myvideo = document.getElementById('example_video_1'),
     playbutton = document.getElementById('playme'),
@@ -60,48 +236,48 @@ jumplink2.addEventListener("click", function (event) {
     event.preventDefault();
     myvideo.play();
     myvideo.pause();
-    myvideo.currentTime = 228;
+    myvideo.currentTime = 208;
     myvideo.play();
 }, false);
 jumplink3.addEventListener("click", function (event) {
     event.preventDefault();
     myvideo.play();
     myvideo.pause();
-    myvideo.currentTime = 384;
+    myvideo.currentTime = 374;
     myvideo.play();
 }, false);
 jumplink4.addEventListener("click", function (event) {
     event.preventDefault();
     myvideo.play();
     myvideo.pause();
-    myvideo.currentTime = 641;
+    myvideo.currentTime = 624;
     myvideo.play();
 }, false);
 jumplink5.addEventListener("click", function (event) {
     event.preventDefault();
     myvideo.play();
     myvideo.pause();
-    myvideo.currentTime = 1043;
+    myvideo.currentTime = 1033;
     myvideo.play();
 }, false);
 jumplink6.addEventListener("click", function (event) {
     event.preventDefault();
     myvideo.play();
     myvideo.pause();
-    myvideo.currentTime = 1206;
+    myvideo.currentTime = 1203;
     myvideo.play();
 }, false);
 jumplink7.addEventListener("click", function (event) {
     event.preventDefault();
     myvideo.play();
     myvideo.pause();
-    myvideo.currentTime = 1378;
+    myvideo.currentTime = 1354;
     myvideo.play();
 }, false);
 
 // only in to demonstrate video
 playbutton.addEventListener("click", function () {
-    if (myvideo.paused) {
+    if (myvideo.paused==true) {
         myvideo.play();
     } else {
         myvideo.pause();
@@ -125,29 +301,8 @@ myvideo.addEventListener("timeupdate", function() {
   seekBar.value = value;
 });
   </script>
-  </div>
-    <div id="container">
-        <div id="preview_info">
-        <p id="text_stuff"> 
-        HOVER OVER A LIST ITEM TO SCAN AND PREVIEW. CLICK TO VIEW</br>
-        1:11 TOUTE LE MEMOIRE DU MONDE</br>
-        1:32 THE GREAT FALL</br>
-        1:35 THE HARVARD DEPOSITORY</br>
-        1:40 KEITH LYSETH EXTENDED INTERVIEW</br>
-        1:50 PAT O'BRIEN EXTENDED INTERVIEW</br>
-        1:55 DRONE REEL</br>
-        2:05 WOODS REEL</br>
-        <p>
-        </div>
-        <div id="intro">
-            <div id ="title" style="text-align:center">
 
-            </div>
-            <a href='#floor' class="down"></a>
-        </div>
-    </div>  
-
-        </section>
+<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
 </body>
 
 </html>
