@@ -2,11 +2,12 @@
 
 <head>
     <title>Cold Storage - An interactive documentary</title>
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
     <link href="css/style.css" rel="stylesheet">
     <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>   
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>   
    
     <script src="jquery-1.11.0.js"></script>
     <script type="text/javascript" src="snap.svg-min.js"></script>
@@ -15,138 +16,70 @@
     <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
     <link rel="stylesheet" type="text/css" media="all" href="css/magnific-popup.css">
 </head>
-    
+<header>
+        <div class="menu_holder expandmenu">
+            <div class="maintitle">COLD STORAGE</div>
+            <div class="sectiontitles">
+                <div><a href="#player">Film</a></div>
+                <div><a href="#floorplan">Floorplan</a></div>
+                <div><a href="#preview_info">Vault</a></div>
+                <div><a href="#about">About</a></div>
+                <div><a href="#credits">Credits</a></div>
+            </div>
+        </div>
+    </header> 
 <body>
-    <header>
-    <h1>COLD STORAGE</h1>
-	<a href="#video"><h5>Film</h5></a>
-	<a href="#preview_info"><h5>Pickinglist</h5></a>
-	<a href="#floorplan"><h5>Vault</h5></a>
-	<a href="#about"><h5>About</h5></a>
-	<a href="#credits"><h5>Credits</h5></a>
-    </header>
-    <div id="video" style="width:1000px;margin:0px auto;">
-
-        <video id="example_video_1" class="video-js my-skin"
-            controls   width="1000px" height="600px"
-               poster="img/maindoc.png">
-            <source src="front_movie.mp4" type='video/mp4' />
-        </video>
-        </div>
-<!-- 		<div id="barcode">
-    	<button id="playme"></button></br>
-        <input type="image" id="jump1" src="img/Barcode_01.png" />
-        <input type="image" id="jump2" src="img/Barcode_02.png" />
-        <input type="image" id="jump3" src="img/Barcode_03.png" />
-        <input type="image" id="jump4" src="img/Barcode_04.png" />
-        <input type="image" id="jump5" src="img/Barcode_05.png" />
-        <input type="image" id="jump6" src="img/Barcode_06.png" />
-        <input type="image" id="jump7" src="img/Barcode_07.png" />
-        <input type="range" id="seek-bar" value="0">
-        <div class="cover"></div>  -->  
-
-        </div>
+       <div id="player"></div>
  
  <div class="floorplan" id="floorplan">
-			<h6 class="headingfp">Floor Plan of the Harvard Depository.</h6> 
-			<p>Another mode of navigating Cold Storage. Coming Soon.</p>
-			<div class="floorplan-imgs">
-				<img id="fp1" data-start="0" class="fp-section" src="./img/FloorplanNav/1_off.jpg">
-				<img id="fp2" data-start="224" class="fp-section" src="./img/FloorplanNav/2_off.jpg">
-				<img id="fp3" data-start="353" class="fp-section" src="./img/FloorplanNav/3_off.jpg">
-				<img id="fp4" data-start="613" class="fp-section" src="./img/FloorplanNav/4_off.jpg">
-				<img id="fp5" data-start="726" class="fp-section" src="./img/FloorplanNav/5_off.jpg">
-				<img id="fp6" data-start="1193" class="fp-section" src="./img/FloorplanNav/6_off.jpg">
-				<img id="fp7" data-start="1373" class="fp-section" src="./img/FloorplanNav/7_off.jpg">
-			</div>
+            <h6 class="headingfp">Floor Plan of the Harvard Depository</h6> 
+            <div class="floorplan-imgs">
+                <img id="fp1" data-start="0" class="fp-section" src="./img/FloorplanNav/1_off.jpg">
+                <img id="fp2" data-start="224" class="fp-section" src="./img/FloorplanNav/2_off.jpg">
+                <img id="fp3" data-start="353" class="fp-section" src="./img/FloorplanNav/3_off.jpg">
+                <img id="fp4" data-start="613" class="fp-section" src="./img/FloorplanNav/4_off.jpg">
+                <img id="fp5" data-start="726" class="fp-section" src="./img/FloorplanNav/5_off.jpg">
+                <img id="fp6" data-start="1193" class="fp-section" src="./img/FloorplanNav/6_off.jpg">
+                <img id="fp7" data-start="1373" class="fp-section" src="./img/FloorplanNav/7_off.jpg">
+            </div>
         
 </div>
 
-       
-        <div id="preview_info">
-        	<h6>MODULE</h6>
-        	<input id="chapters1" type="button" value="One"/>
-        	<input id="chapters2" type="button" value="Two"/>
-        	<input id="chapters3" type="button" value="Three"/>
-        	<input id="chapters4" type="button" value="Four"/>
-        	<input id="chapters5" type="button" value="Five"/>
-        	<input id="chapters6" type="button" value="Six" />
-        	<input id="chapters7" type="button" value="Seven" />
-
-		<div class="navbutts"><a id="prev-bt">previous item</a><a id="next-bt">next item</a></div>
-
-			<div class="one chapter">
-			<div class="pexp">
-			<div id="player-digital-name-one" class="pname"></div>
-			<div id="player-digital-title-one" class="ptitle"></div></div>
-			<div id="player-digital-image-one" class="pimage"></div>
-			</div>
-			<div class="two chapter">
-			<div class="pexp">
-			<div id="player-digital-name-two" class="pname"></div>
-			<div id="player-digital-title-two" class="ptitle"></div></div>
-			<div id="player-digital-image-two" class="pimage"></div>
-			</div>
-			<div class="three chapter">
-			<div class="pexp">
-			<div id="player-digital-name-three" class="pname"></div>
-			<div id="player-digital-title-three" class="ptitle"></div></div>
-			<div id="player-digital-image-three" class="pimage"></div>
-			</div>
-			<div class="four chapter">
-			<div class="pexp">
-			<div id="player-digital-name-four" class="pname"></div>
-			<div id="player-digital-title-four" class="ptitle"></div></div>
-			<div id="player-digital-image-four" class="pimage"></div>
-			</div>
-			<div class="five chapter">
-			<div class="pexp">
-			<div id="player-digital-name-five" class="pname"></div>
-			<div id="player-digital-title-five" class="ptitle"></div></div>
-			<div id="player-digital-image-five" class="pimage"></div>
-			</div>
-			<div class="six chapter">
-			<div class="pexp">
-			<div id="player-digital-name-six" class="pname"></div>
-			<div id="player-digital-title-six" class="ptitle"></div></div>
-        	<div id="player-digital-image-six" class="pimage"></div>
-			</div>
-			<div class="seven chapter">
-			<div class="pexp">
-			<div id="player-digital-name-seven" class="pname"></div>
-			<div id="player-digital-title-seven" class="ptitle"></div></div>
-			<div id="player-digital-image-seven" class="pimage"></div>
-			</div>
-
-
-        </div>
-		        	
+ <div id="preview_info">
+ <h6 class="thevault">The Vault</h6>
+<div class="navbutts"><a id="prev-bt">previous item</a><a id="next-bt">next item</a></div>
+<div class="one chapter">
+    <div class="pexp">
+        <div id="player-digital-name-one" class="pname"></div>
+        <div id="player-digital-title-one" class="ptitle"></div>
+    </div>
+    <div id="player-digital-image-one" class="pimage">
+    <div id="currentembed">
+    </div>
+</ul>
+    </div>
+</div>
+</div>      
+        
         
 <a href="#" id='player-handwriting-title-one'></a>
-<a href="#" id='player-handwriting-title-two'></a>
-<a href="#" id='player-handwriting-title-three'></a>
-<a href="#" id='player-handwriting-title-four'></a>
-<a href="#" id='player-handwriting-title-five'></a>
-<a href="#" id='player-handwriting-title-six'></a>
-<a href="#" id='player-handwriting-title-seven'></a>
 
-        <div id="about">
+<div id="about">
     <h6>About</h6>
 
-<p>Cold Storage is a 24-minute documentary short film interlinked with an expanding collection of intertextual media artifacts, an archive of experiments and experiences in and around the Harvard Depository (“HD”), Harvard’s off-site library storage facility. Taken together, the film and its associated media collection explore how libraries have changed from the “shrines to knowledge” of the past to the evolving networks that interconnect vast warehouses and patrons of the present. By looking at objects as varied as books, databases, and air-conditioning systems, what conversations about libraries of the future may be prompted? </br>
-</br>
-<b>The Library Beyond the Book</b></br>
+<p>Cold Storage is a 24-minute documentary short film interlinked with an expanding collection of intertextual media artifacts, an archive of experiments and experiences in and around the Harvard Depository ("HD"), Harvard's off-site library storage facility. Taken together, the film and its associated media collection explore how libraries have changed from the "shrines to knowledge" of the past to the evolving networks that interconnect vast warehouses and patrons of the present. By looking at objects as varied as books, databases, and air-conditioning systems, what conversations about libraries of the future may be prompted? </br></p>
 
-Co-written by Jeffrey Schnapp and Matthew Battles, The Library Beyond the Book combines a deep study of the library’s history with reflections and provocations for thinking about the future of libraries, in part drawing from their research initiatives at metaLAB. The film takes its name from the closing chapter of the book, Cold Storage, which is based upon an initial media reconnaissance mission to the Harvard Depository. It was also in this encounter that the impulse to dialogue with Alain Resnais’ Toute la mémoire du monde was born. </br>
-</br>
-<b>Humanities Studio I : Cold Storage</b></br>
-</br>
-In the Spring of 2014, the metaLAB team taught its first course under the “humanities studio” rubric, combining a traditional humanities class experience with a making and process-based critical studio environment. Existing outside any single school or department, the course encouraged interdisciplinary enrollment, which resulted in a class composed of undergraduates, students from Harvard’s Graduate School of Design, a student from the Graduate School of Education, and a cross-enrollment from MIT. </br>
-</br>
-Starting from a series of storyboards imagining the journey of a book from the stacks to the hands of library patrons, the students and the teaching team then embarked on a series of field trips to the Harvard Depository site in Southborough—first creating a collective repository of photographs from which to develop more illustrated storyboards and eventually video and audio documentation that, while also shared to a degree, targeted students’ individual production and editing capacities. While most student projects were based in video, a preliminary set of wireframes envisioning what this website might look like and a sound-mapping of the facility with wireframes for a corresponding interface were also developed in the context of the class. </br>
+<p><b>The Library Beyond the Book</b></br>
+
+Co-written by Jeffrey Schnapp and Matthew Battles, The Library Beyond the Book combines a deep study of the library's history with reflections and provocations for thinking about the future of libraries, in part drawing from their research initiatives at metaLAB. The film takes its name from the closing chapter of the book, Cold Storage, which is based upon an initial media reconnaissance mission to the Harvard Depository. It was also in this encounter that the impulse to dialogue with Alain Resnais' Toute la m&#233;moire du monde was born.</p> </br>
+
+<p><b>Humanities Studio I : Cold Storage</b></br>
+
+In the Spring of 2014, the metaLAB team taught its first course under the "humanities studio" rubric, combining a traditional humanities class experience with a making and process-based critical studio environment. Existing outside any single school or department, the course encouraged interdisciplinary enrollment, which resulted in a class composed of undergraduates, students from Harvard's Graduate School of Design, a student from the Graduate School of Education, and a cross-enrollment from MIT. </p></br>
+
+<p>Starting from a series of storyboards imagining the journey of a book from the stacks to the hands of library patrons, the students and the teaching team then embarked on a series of field trips to the Harvard Depository site in Southborough-first creating a collective repository of photographs from which to develop more illustrated storyboards and eventually video and audio documentation that, while also shared to a degree, targeted students' individual production and editing capacities. While most student projects were based in video, a preliminary set of wireframes envisioning what this website might look like and a sound-mapping of the facility with wireframes for a corresponding interface were also developed in the context of the class.</p> </br>
 </br>
 </div>
-
 <div id="credits">
 <h6>Credits</h6></br>
 <p>
@@ -158,7 +91,7 @@ Matthew Battles - Executive Producer</br>
 Peter McMurray - Line Producer, Production Sound</br>
 </br>
 The film comments upon and explores ideas expressed in the 1956 film,
-Toute la mémoire du monde, directed by Alain Resnais, and incorporates 
+Toute la m&#233;moire du monde, directed by Alain Resnais, and incorporates 
 audio, video, and narrative text from that work. </br>
 </br>
 The film incorporates video clips from The Harvard Depository, a short made
@@ -174,17 +107,17 @@ Footage of clouds by Beachfront Broll, and licensed under a Creative Commons Att
     Matt McMurray</br>
     Tamar Sella</br>
 </br>
-“Plastic Mind (Honky Tonk Project Cinematic Mix)” by Sound Spread</br>
-“White Prickly Poppy” by Aaron Russell</br>
-“Forest of Diodes” by Red Fog</br>
-“Train Jacker” by Room of Wires</br>
-“A Sealed Night (Ambient)” by Moby</br>
+"Plastic Mind (Honky Tonk Project Cinematic Mix)" by Sound Spread</br>
+"White Prickly Poppy" by Aaron Russell</br>
+"Forest of Diodes" by Red Fog</br>
+"Train Jacker" by Room of Wires</br>
+"A Sealed Night (Ambient)" by Moby</br>
 </br>
 <b>Special Thanks</b></br>
 </br>
 Keith Lyseth</br>
 Dan Moulton</br>
-Pat O’Brien</br>
+Pat O'Brien</br>
 Matthew Sheehy</br>
 Seth Torres</br>
 Sarah Thomas</br>
@@ -205,9 +138,9 @@ Tim Maly</br>
 Ivan Sigal </br>
 Priyanka Suresh </br>
 James Yamada</br>
-Jessica Yurkofsky</br>
+Jessica Yurkovsky</br>
 </br>
-Dédié à Alain Resnais </br>
+D&#233;di&#233; &#224; Alain Resnais </br>
 1922-2014</br>
 </br>
 <b>The Website</b></br>
@@ -222,147 +155,126 @@ Metadata by Joyce Liu</br>
 Color in HD by Jennifer Mills</br>
 Indexical Fridge by Jun Wang</p>
 </div>
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
 <script>
-
-
-$(".fp-section").click(function(e) {
-		event.preventDefault();
-    myvideo.play();
-    myvideo.pause();
-    myvideo.currentTime = $(e.target).attr("data-start");
-    myvideo.play();
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        
+    var module;    
+    var currentModule = 0;
+    var player;
+    function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+    height: '640',
+    width: '1000',
+    videoId: 'IYFuz8d8WzQ',
+    events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
 });
-
-document.getElementById('example_video_1').addEventListener('timeupdate',function(e){timeUpdateHandler(e);},false);
-var myvideo = document.getElementById('example_video_1');
-var currentModule = 0;
-function timeUpdateHandler(e) {
-	var t = myvideo.currentTime;
-	var module;
-	if(t < 224) { module = 1;	modulename = "one";}
-	else if(t< 353) { module = 2; modulename = "two";}
-	else if(t< 613) { module = 3; modulename = "three";}
-	else if(t< 726) { module = 4; modulename = "four";}
-	else if(t< 1193) { module = 5; modulename = "five";}
-	else if(t< 1373) { module = 6; modulename = "six";}
-	else {
-		module = 7;
-		modulename = "seven";
-	}
-	
-	if(module != currentModule) {
-		$("#fp"+currentModule).attr("src", "./img/FloorplanNav/"+currentModule+"_off.jpg");
-		currentModule = module;
-		console.log("MODULE CHANGE");
-		console.log("module "+currentModule);
-		console.log(modulename);
-		$("#fp"+currentModule).attr("src", "./img/FloorplanNav/"+currentModule+"_on.jpg");
-		$(".chapter").hide();
-    $("."+modulename).show();
-	}
-
-  var value = (100 / myvideo.duration) * myvideo.currentTime;
-
 }
 
-    var playbutton = document.getElementById('playme'),
-    jumplink1 = document.getElementById('jump1');
-    jumplink2 = document.getElementById('jump2');
-    jumplink3 = document.getElementById('jump3');
-    jumplink4 = document.getElementById('jump4');
-    jumplink5 = document.getElementById('jump5');
-    jumplink6 = document.getElementById('jump6');
-    jumplink7 = document.getElementById('jump7');
-    seekBar = document.getElementById("seek-bar");
+      function onPlayerReady(event) {
+        event.target.cuePlaylist(["IYFuz8d8WzQ","MstFsNp-8m0"], "medium");
+        event.target.playVideo();
+      }
 
+      function onPlayerStateChange(event) {
+      var t;
+        if (event.data == YT.PlayerState.PLAYING) {
+            setInterval(function(){
+            t = player.getCurrentTime();
+            console.log(t);
 
-jumplink1.addEventListener("click", function (event) {
-    event.preventDefault();
-    myvideo.play();
-    myvideo.pause();
-    myvideo.currentTime = 0;
-    myvideo.play();
-}, false);
-
-jumplink2.addEventListener("click", function (event) {
-    event.preventDefault();
-    myvideo.play();
-    myvideo.pause();
-    myvideo.currentTime = 208;
-    myvideo.play();
-}, false);
-jumplink3.addEventListener("click", function (event) {
-    event.preventDefault();
-    myvideo.play();
-    myvideo.pause();
-    myvideo.currentTime = 374;
-    myvideo.play();
-}, false);
-jumplink4.addEventListener("click", function (event) {
-    event.preventDefault();
-    myvideo.play();
-    myvideo.pause();
-    myvideo.currentTime = 624;
-    myvideo.play();
-}, false);
-jumplink5.addEventListener("click", function (event) {
-    event.preventDefault();
-    myvideo.play();
-    myvideo.pause();
-    myvideo.currentTime = 1033;
-    myvideo.play();
-}, false);
-jumplink6.addEventListener("click", function (event) {
-    event.preventDefault();
-    myvideo.play();
-    myvideo.pause();
-    myvideo.currentTime = 1203;
-    myvideo.play();
-}, false);
-jumplink7.addEventListener("click", function (event) {
-    event.preventDefault();
-    myvideo.play();
-    myvideo.pause();
-    myvideo.currentTime = 1354;
-    myvideo.play();
-}, false);
-
-// only in to demonstrate video
-playbutton.addEventListener("click", function () {
-    if (myvideo.paused==true) {
-        myvideo.play();
-    } else {
-        myvideo.pause();
+    if(t < 224) { module = 1;   modulename = "one"; }
+    else if(t< 353) { module = 2; modulename = "two"; }
+    else if(t< 613) { module = 3; modulename = "three"; }
+    else if(t< 726) { module = 4; modulename = "four"; }
+    else if(t< 1193) { module = 5; modulename = "five"; }
+    else if(t< 1373) { module = 6; modulename = "six"; }
+    else {
+        module = 7;
+        modulename = "seven";
     }
-}, false);
 
-// Event listener for the seek bar
-seekBar.addEventListener("change", function() {
-  // Calculate the new time
-  var time = myvideo.duration * (seekBar.value / 100);
+    var count=0;
+    var vaultdata = {};
+ 
+    $.getJSON('coldstorage.json', function(chone) {
+    count=chone.length;
+    var firstIndex=0,lastIndex=0;
+    $.each(chone, function(i,val) {
+      if(!vaultdata[val.chapter]) vaultdata[val.chapter] = [];
+      vaultdata[val.chapter].push(val);
+    
+    });
+  });
 
-  // Update the video time
-  myvideo.currentTime = time;
+    if(module != currentModule) {
+        $("#fp"+currentModule).attr("src", "./img/FloorplanNav/"+currentModule+"_off.jpg");
+        currentModule = module;
+        console.log("MODULE CHANGE");
+        console.log("module "+currentModule);
+        console.log(modulename);
+        $("#fp"+currentModule).attr("src", "./img/FloorplanNav/"+currentModule+"_on.jpg");
+        //$(".chapter").hide();
+    $("."+modulename).show();
+        $("#currentembed").html("");
+    var v = vaultdata[module][0];
+    $("#currentembed").append($("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.location));
+        console.log(v);
+        $('#player-digital-title-one').html(v.description);
+        $('#player-digital-name-one').html(v.item_title);
+    }
+
+},1000);
+
+    var clickIndex = 0;
+    $("#next-bt").click(function() {
+        clickIndex = clickIndex + 1;;       
+        if(clickIndex >= vaultdata[currentModule].length) clickIndex = 0;
+      $("#currentembed").html("");
+    var v = vaultdata[currentModule][clickIndex];
+    $("#currentembed").append($("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.location));
+        $('#player-digital-title-one').html(v.description);
+        $('#player-digital-name-one').html(v.item_title);
+    });
+
+    $("#prev-bt").click(function() {
+        clickIndex = clickIndex - 1;;       
+        if(clickIndex <= 0) clickIndex = vaultdata[currentModule].length - 1;
+      $("#currentembed").html("");
+    var v = vaultdata[currentModule][clickIndex];
+    $("#currentembed").append($("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.location));
+        $('#player-digital-title-one').html(v.description);
+        $('#player-digital-name-one').html(v.item_title);
 });
-// Update the seek bar as the video plays
+        }
+}
+      function stopVideo() {
+        player.stopVideo();
+      }
 
-
-
-
-myvideo.addEventListener("timeupdate", function() {
-  // Calculate the slider value
-  var value = (100 / myvideo.duration) * myvideo.currentTime;
-
-  // Update the slider value
-  seekBar.value = value;
-});
-
-
-  </script>
-
+</script>
+<script> 
+//top menu
+$(window).scroll(function (event) {
+    var scroll = $(window).scrollTop();
+    if(scroll < 50){
+        console.log("expand menu");
+        $(".menu_holder").removeClass('collapsemenu').addClass('expandmenu');
+    }else{
+        console.log("collapse menu");
+        $(".menu_holder").removeClass('expandmenu').addClass('collapsemenu');
+    }
+   
+});</script>
 <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
 </body>
-
+<footer> Copyright &copy; 2014 <a id="footer" href="http://metalab.harvard.edu/">metaLAB at Harvard </a> All rights reserved. </footer>
 </html>
