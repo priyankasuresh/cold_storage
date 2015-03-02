@@ -10,13 +10,13 @@ header{
   width: 1000px;
   height: 128px;
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
   background: #000000;
   font-family: 'PT Sans', sans-serif;
 }
 
 body {
-	font-family: 'Open sans', sans-serif;
+  font-family: 'Open sans', sans-serif;
   background-color: #000000;
   width: 1000px;
   margin-left: auto;
@@ -72,7 +72,7 @@ h6{
     letter-spacing: 1px;
     color: #FFFFFF;
     margin-top: -5px; 
-    margin-bottom: -10px;
+    margin-bottom: 10px;
 }
 h5{
     font-family: 'Open sans', sans-serif;
@@ -169,174 +169,16 @@ input:hover{
     border: none;
     margin-left: -5px;
 }
-#chapters2{
-    text-transform: uppercase;
-    font-family: 'BebasNeue';
-    font-weight: 500;
-    font-size: 20px;
-    letter-spacing: 1px;
-    color: #FFFFFF;
-    margin-top: -5px;
-    background-color: #000000;
-    border: none;
-    margin-left: -5px;
-}
 
-#chapters2:hover{
-    text-transform: uppercase;
-    font-family: 'BebasNeue';
-    font-weight: 500;
-    font-size: 20px;
-    letter-spacing: 1px;
-    color: #FF0000;
-    margin-top: -5px;
-    background-color: #000000;
-    border: none;
-    margin-left: -5px;
-}
-#chapters3{
-    text-transform: uppercase;
-    font-family: 'BebasNeue';
-    font-weight: 500;
-    font-size: 20px;
-    letter-spacing: 1px;
-    color: #FFFFFF;
-    margin-top: -5px;
-    background-color: #000000;
-    border: none;
-    margin-left: -5px;
-}
-
-#chapters3:hover{
-    text-transform: uppercase;
-    font-family: 'BebasNeue';
-    font-weight: 500;
-    font-size: 20px;
-    letter-spacing: 1px;
-    color: #FF0000;
-    margin-top: -5px;
-    background-color: #000000;
-    border: none;
-    margin-left: -5px;
-}
-#chapters4{
-    text-transform: uppercase;
-    font-family: 'BebasNeue';
-    font-weight: 500;
-    font-size: 20px;
-    letter-spacing: 1px;
-    color: #FFFFFF;
-    margin-top: -5px;
-    background-color: #000000;
-    border: none;
-    margin-left: -5px;
-}
-
-#chapters4:hover{
-    text-transform: uppercase;
-    font-family: 'BebasNeue';
-    font-weight: 500;
-    font-size: 20px;
-    letter-spacing: 1px;
-    color: #FF0000;
-    margin-top: -5px;
-    background-color: #000000;
-    border: none;
-    margin-left: -5px;
-}
-#chapters5{
-    text-transform: uppercase;
-    font-family: 'BebasNeue';
-    font-weight: 500;
-    font-size: 20px;
-    letter-spacing: 1px;
-    color: #FFFFFF;
-    margin-top: -5px;
-    background-color: #000000;
-    border: none;
-    margin-left: -5px;
-}
-
-#chapters5:hover{
-    text-transform: uppercase;
-    font-family: 'BebasNeue';
-    font-weight: 500;
-    font-size: 20px;
-    letter-spacing: 1px;
-    color: #FF0000;
-    margin-top: -5px;
-    background-color: #000000;
-    border: none;
-    margin-left: -5px;
-}
-#chapters6{
-    text-transform: uppercase;
-    font-family: 'BebasNeue';
-    font-weight: 500;
-    font-size: 20px;
-    letter-spacing: 1px;
-    color: #FFFFFF;
-    margin-top: -5px;
-    background-color: #000000;
-    border: none;
-    margin-left: -5px;
-}
-
-#chapters6:hover{
-    text-transform: uppercase;
-    font-family: 'BebasNeue';
-    font-weight: 500;
-    font-size: 20px;
-    letter-spacing: 1px;
-    color: #FF0000;
-    margin-top: -5px;
-    background-color: #000000;
-    border: none;
-    margin-left: -5px;
-}
-#chapters7{
-    text-transform: uppercase;
-    font-family: 'BebasNeue';
-    font-weight: 500;
-    font-size: 20px;
-    letter-spacing: 1px;
-    color: #FFFFFF;
-    margin-top: -5px;
-    background-color: #000000;
-    border: none;
-    margin-left: -5px;
-}
-
-#chapters7:hover{
-    text-transform: uppercase;
-    font-family: 'BebasNeue';
-    font-weight: 500;
-    font-size: 20px;
-    letter-spacing: 1px;
-    color: #FF0000;
-    margin-top: -5px;
-    background-color: #000000;
-    border: none;
-    margin-left: -5px;
-}
 .selected{
   
 background-color:red;    
 }    
 
-#container{
-  
-}
-
-#video{
-    padding-top: 30px;
-}
-
 
 #intro{
   position: relative;
 }
-
 
 #clip{
   position: absolute;
@@ -390,21 +232,12 @@ background-color:red;
    width: 20px;
    height: 132px;
 }
+
 .cover{
   z-index: 3;
   background-color: #000000;
   width: 1000px;
   height: 50px;
-}
-#playme{
-  background-color: #000000;
-  border: none;
-}
-#seek-bar::-moz-range-track {
-   -moz-appearance: none;
-   border-color: #ff0000;
-   box-shadow: inset 0px 0px 0px #000000;
-   background-color: #000000;
 }
 
 #cont1{
@@ -427,12 +260,12 @@ background-color:red;
 }
 
 #floorplan{
-  padding-top: 20px;
+  padding-top: 50px;
   margin-bottom: 50px;
 }
 
 #about{
-  padding-top: 30px;
+  padding-top: 120px;
 }
 
 .one{ background: #000000;
@@ -464,17 +297,21 @@ color: #FFFFFF; }
 
 .floorplan{
   width: 1030px;
+  padding-top: 20px;
 }
 
 .floorplan-imgs img:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 #prev-bt{
   width: 100px;
-  font-size: 10px;
+  height: 20px;
+  font-size: 16px;
   color: #ffffff;
   cursor: pointer;
+  text-align: left;
+  vertical-align: center;
 }
 
 .pexp {
@@ -502,35 +339,22 @@ color: #FFFFFF; }
 #player-handwriting-title-one {
   display: none;
 }
-#player-handwriting-title-two {
-  display: none;
-}
-#player-handwriting-title-three {
-  display: none;
-}
-#player-handwriting-title-four {
-  display: none;
-}
-#player-handwriting-title-five {
-  display: none;
-}
-#player-handwriting-title-six {
-  display: none;
-}
-#player-handwriting-title-seven {
-  display: none;
-}
+
 #next-bt{
   width: 100px;
+  height: 20px;
   float: right;
   text-align: right;
-  font-size: 10px;
+  font-size: 16px;
   color: #ffffff;
   cursor: pointer;
+  vertical-align: center;
+  margin-top: 2px;
 }
 
 .navbutts{
   width: 1000px;
+  height: 20px;
   padding-top: 10px;
   padding-bottom: 5px;
   height: 35px;
@@ -562,9 +386,6 @@ color: #FFFFFF; }
   padding-top: 10px;
 }
 
-#exp_text{
-}
-
 #coldstorage {
   position: relative;
   bottom: 559px;
@@ -578,6 +399,20 @@ color: #FFFFFF; }
   position: relative;
   left: 600px;
   bottom: 111px;
+}
+
+.thevault{
+
+}
+
+#pwha{
+  width: 5px;
+  height: 5px;
+}
+
+#pwhawha{
+  width: 5px;
+  height: 5px;
 }
 
 #vaultab{
@@ -658,4 +493,98 @@ html[xmlns] .clearfix { display: block; }
     width: 80%;
     margin-bottom: 30px;
   }
+}
+
+footer{
+    text-align: center;
+  font-family: 'sans-serif';
+  font-size: 12px;
+  color: #ffffff;
+  padding-top: 25px;
+}
+
+#footer{
+  text-align: center;
+  font-family: 'sans-serif';
+  font-size: 12px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+
+#video_container_player div, #video_container_player figcaption { 
+  display: table-cell;
+  vertical-align: top; 
+}
+
+#video_container_container video { 
+  position: absolute; 
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+#video_container_player figcaption { width: 5%; }
+#video_container_player figcaption a { display: block; }
+#video_container_player figcaption a { 
+  opacity: .5;
+  transition: 1s opacity; 
+}
+#video_container_player figcaption a img, figure video { 
+  width: 100%; height: auto; 
+}
+#video_container_player figcaption a.currentvid, #video_container_player figcaption a:hover, #video_container_player figcaption a:focus { opacity: 1; }
+@media (max-width: 700px) {
+  #video_container_player video, #video_container_player figcaption { 
+    display: table-row; 
+  }
+#video_container_container { padding-top: 56.25%; }
+#video_container_player figcaption a { 
+  display: inline-block; width: 33.33%; 
+}
+}
+
+
+.maintitle{
+    font-size: 35px;
+    width: 200px;
+    font-family: 'BebasNeue';
+    float: left;
+    padding: 10px 0 0 0;
+}
+
+.menu_holder{
+    color: white;
+    position: fixed;
+    z-index: 100;
+    background: black;
+    width: 1000px;
+    top: 0;
+}
+
+/*START CLASS FOR COLLAPSED MENU*/
+.collapsemenu .sectiontitles{
+    float: left;
+}
+.collapsemenu .sectiontitles a{
+    font-size: 12px;
+    font-family: arial; /*CHANGE THIS!!!!*/
+}
+.collapsemenu .sectiontitles div{
+    float: left;
+    padding: 17px 70px 0 0;
+}
+/*END CLASS FOR COLLAPSED MENU*/
+/*START CLASS FOR EXPANDED MENU*/
+.expandmenu .sectiontitles{
+    clear: both;
+}
+.expandmenu .sectiontitles a{
+    font-size: 12px;
+    font-family: arial; /*CHANGE THIS!!!!*/
+}
+.expandmenu .sectiontitles div{
+    clear: both;
+    height: 16px;
 }
