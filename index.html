@@ -171,7 +171,7 @@ Indexical Fridge by Jun Wang</p>
     player = new YT.Player('player', {
     height: '640',
     width: '1000',
-    videoId: 'IYFuz8d8WzQ',
+    //videoId: 'IYFuz8d8WzQ',
     events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -180,7 +180,7 @@ Indexical Fridge by Jun Wang</p>
 }
 
       function onPlayerReady(event) {
-        event.target.cuePlaylist(["IYFuz8d8WzQ","MstFsNp-8m0"], "medium");
+        event.target.cuePlaylist(["IYFuz8d8WzQ","MstFsNp-8m0"], 0, "medium");
         event.target.playVideo();
       }
 
