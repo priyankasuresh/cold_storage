@@ -88,7 +88,7 @@ function box(x,y){
     var count=0;
     var vaultdata = {};
  
-    $.getJSON('coldstorage.json', function(chone) {
+    $.getJSON('data/coldstorage.json', function(chone) {
     count=chone.length;
     var firstIndex=0,lastIndex=0;
     $.each(chone, function(i,val) {

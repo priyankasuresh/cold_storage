@@ -28,7 +28,7 @@
         if (event.data == YT.PlayerState.PLAYING) {
             setInterval(function(){
             t = player.getCurrentTime();
-            console.log(t);
+            // console.log(t);
 
     if(t < 224) { module = 1;   modulename = "one"; }
     else if(t< 353) { module = 2; modulename = "two"; }
@@ -44,7 +44,7 @@
     var count=0;
     var vaultdata = {};
  
-    $.getJSON('coldstorage.json', function(chone) {
+    $.getJSON('data/coldstorage.json', function(chone) {
     count=chone.length;
     var firstIndex=0,lastIndex=0;
     $.each(chone, function(i,val) {
