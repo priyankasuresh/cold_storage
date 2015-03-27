@@ -1,38 +1,143 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>Cold Storage - An interactive documentary</title>
-    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
-    <link href="css/style.css" rel="stylesheet">
-    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/ico" href="favicon.ico" />
+
+    <title>Cold Storage</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/grayscale.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    
+		<script src="//use.typekit.net/dqx5ncn.js"></script>
+		<script>try{Typekit.load();}catch(e){}</script>
+
+	<link href="fonts/BebasNeue.otf" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:700" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>   
-   
-    <script src="jquery-1.11.0.js"></script>
-    <script type="text/javascript" src="snap.svg-min.js"></script>
-    <script type="text/javascript" src="Main.js" ></script>
+    <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css"> 
+  
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script type="text/javascript" src="js/Main.js" ></script>
+    <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
-    <link rel="stylesheet" type="text/css" media="all" href="css/magnific-popup.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="js/grayscale.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    
 </head>
-<header>
-        <div class="menu_holder expandmenu">
-            <div class="maintitle">COLD STORAGE</div>
-            <div class="sectiontitles">
-                <div><a href="#player">Film</a></div>
-                <div><a href="#floorplan">Floorplan</a></div>
-                <div><a href="#preview_info">Vault</a></div>
-                <div><a href="#about">About</a></div>
-                <div><a href="#credits">Credits</a></div>
+					
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+         
+    <!-- start title slide -->
+    <div id="title slide">
+	    <div class="container">
+		    <div class="row">
+			<div class="col-12 span12"
+				<div id="title-logo">
+					<a href="http://www.metalab.harvard.edu">
+						<div id="nav-logo" class="metalab-logo"></div>
+					</a>
+				</div>
+		    </div>
+		    <div id="cs-logo" style="text-align: center" class="tk-bebas-neue"> Cold Storage </div>
+			</div>
+		</div>
+	</div>
+	<!--end title slide-->
+	
+	<!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i>  <span class="tk-bebas-neue">Cold Storage
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll tk-bebas-neue" href="#film">FILM</a>
+                    </li>
+                     <li>
+                        <a class="page-scroll tk-bebas-neue" href="#floorplan">FLOOR PLAN</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll tk-bebas-neue" href="#vault">VAULT</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll tk-bebas-neue" href="#about">ABOUT</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll tk-bebas-neue" href="#credits">CREDITS</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        
+         </nav>
+
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                		<div id="intro"></div>
+                </div>
+                <div class="row">
+                        <a href="#film" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                </div>
             </div>
         </div>
-    </header> 
-<body>
-       <div id="player"></div>
- 
- <div class="floorplan" id="floorplan">
-            <h6 class="headingfp">Floor Plan of the Harvard Depository</h6> 
+    </header>
+
+    <!-- Film Section -->
+    <section id="film" class="container content-section text-left">
+    	<div class="container">
+       		 <div class="row">
+            	  <div id="player"></div>
+			 </div>
+    	</div>
+    </section>
+    
+    
+       <!-- Floorplan Section -->
+    <section id="floorplan" class="floorplan content-section text-left">
+        <div class="download-section">
+					<div class="container">
+						<div class="row">
+								
+									 <h2 class="headingfp tk-bebas-neue">Floor Plan of the Harvard Depository</h2> 
             <div class="floorplan-imgs">
                 <img id="fp1" data-start="0" class="fp-section" src="./img/FloorplanNav/1_off.jpg">
                 <img id="fp2" data-start="224" class="fp-section" src="./img/FloorplanNav/2_off.jpg">
@@ -41,32 +146,39 @@
                 <img id="fp5" data-start="726" class="fp-section" src="./img/FloorplanNav/5_off.jpg">
                 <img id="fp6" data-start="1193" class="fp-section" src="./img/FloorplanNav/6_off.jpg">
                 <img id="fp7" data-start="1373" class="fp-section" src="./img/FloorplanNav/7_off.jpg">
-            </div>
-        
-</div>
+            </div>							
+						</div>
+					</div>
+				</div>
+    </section>
+    
+           <!-- Vault Section -->
+    <section id="vault" class="container content-section text-left">
+        <div class="row">
+            
+            	<h2 class="thevault tk-bebas-neue">The Vault</h2>
+					<div class="navbutts"><a id="prev-bt">previous item</a><a id="next-bt">next item</a></div>
+					<div id="vault_null"><img src="./img/Vault_null.png"></div>
+						<div id="infobox" class="one chapter">
+								<div class="pexp">
+									<div id="player-digital-name-one" class="pname"></div>
+									<div id="player-digital-title-one" class="ptitle"></div>
+								</div>
+									<div id="player-digital-image-one" class="pimage">
+									<div id="currentembed"> </div> </ul>
+									</div>
+									</div>
+            
+        </div>
+    </section>
 
- <div id="preview_info">
- <h6 class="thevault">The Vault</h6>
-<div class="navbutts"><a id="prev-bt">previous item</a><a id="next-bt">next item</a></div>
-<div id="vault_null"><img src="./img/Vault_null.png"></div>
-<div id="infobox" class="one chapter">
-    <div class="pexp">
-        <div id="player-digital-name-one" class="pname"></div>
-        <div id="player-digital-title-one" class="ptitle"></div>
-    </div>
-    <div id="player-digital-image-one" class="pimage">
-    <div id="currentembed">
-    </div>
-</ul>
-    </div>
-</div>
-</div>      
-        
-        
-<a href="#" id='player-handwriting-title-one'></a>
 
-<div id="about">
-    <h6>About</h6>
+    <!-- About Section -->
+    <section id="about" class="content-section text-left">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                      <h2 class="tk-bebas-neue">About</h2>
 
 <p>Cold Storage is a 24-minute documentary short film interlinked with an expanding collection of intertextual media artifacts, an archive of experiments and experiences in and around the Harvard Depository ("HD"), Harvard's off-site library storage facility. Taken together, the film and its associated media collection explore how libraries have changed from the "shrines to knowledge" of the past to the evolving networks that interconnect vast warehouses and patrons of the present. By looking at objects as varied as books, databases, and air-conditioning systems, what conversations about libraries of the future may be prompted? </br></p>
 
@@ -80,9 +192,17 @@ In the Spring of 2014, the metaLAB team taught its first course under the "human
 
 <p>Starting from a series of storyboards imagining the journey of a book from the stacks to the hands of library patrons, the students and the teaching team then embarked on a series of field trips to the Harvard Depository site in Southborough-first creating a collective repository of photographs from which to develop more illustrated storyboards and eventually video and audio documentation that, while also shared to a degree, targeted students' individual production and editing capacities. While most student projects were based in video, a preliminary set of wireframes envisioning what this website might look like and a sound-mapping of the facility with wireframes for a corresponding interface were also developed in the context of the class.</p> </br>
 </br>
-</div>
-<div id="credits">
-<h6>Credits</h6></br>
+
+                       </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credits Section -->
+    <section id="credits" class="container content-section text-left">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+               <h2 class="tk-bebas-neue">Credits</h2></br>
 <p>
 <b>The Film</b></br>
 </br>
@@ -154,16 +274,71 @@ Bridging the Border - Transferring HD Materials by Allison Goffman</br>
 The Harvard Depository by Peter Kirschman</br>
 Metadata by Joyce Liu</br>
 Color in HD by Jennifer Mills</br>
-Indexical Fridge by Jun Wang</p>
-</div>
+Indexical Fridge by Jun Wang</p> 
+            </div>
+        </div>
+    </section>
+    
+</body>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; metaLAB at Harvard 2015</p>
+        </div>
+  
 
 <script>
+
+	//Loads Youtube IFrame Player API:
     var tag = document.createElement('script');
-    tag.src = "http://www.youtube.com/iframe_api";
+    
+    tag.src = "https://www.youtube.com/iframe_api";
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        
+    var intro;
+    function onYouTubeIframeAPIReady() {
+    intro = new YT.Player('intro', {
+		height: 583,
+		width: 1000,
+		videoId: 'IYFuz8d8WzQ',
+		playerVars: {
+		         'autoplay':1,
+		         'controls':0,
+		         'showinfo':0,
+		         'modestbranding':1,
+		         'rel':0},
+		events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+                }
+                                    });
+                                        }                                 
+
+	//Initiates playback
+    function onPlayerReady(event) {
+	event.target.playVideo();
+      }
+                
+   //Trigger movement to next ID on playback stop - making this up
+   	function onPlayerStateChange(event){
+   			console.log(event);
+	      if (event.data === 2){
+	      
+			  $("html, body").animate({scrollTop : $('#player').offset().top }, 600);
+			  } 
+	       }
+			            
+    //Trigger pause in video if user moves to the next ID
+ </script>
+    
+ <!--
+ <script>
+    var secondtag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var secondScriptTag = document.getElementsByTagName('script')[0];
+    secondScriptTag.parentNode.insertBefore(secondtag, secondScriptTag);
         
     var module;    
     var currentModule = 0;
@@ -172,7 +347,13 @@ Indexical Fridge by Jun Wang</p>
     player = new YT.Player('player', {
     height: '640',
     width: '1000',
-    //videoId: 'IYFuz8d8WzQ',
+    videoId: 'MstFsNp-8m0',
+    playerVars: {
+		         'autoplay':1,
+		         'controls':0,
+		         'showinfo':0,
+		         'modestbranding':1,
+		         'rel':0},
     events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -181,7 +362,6 @@ Indexical Fridge by Jun Wang</p>
 }
 
       function onPlayerReady(event) {
-        event.target.cuePlaylist(["IYFuz8d8WzQ","MstFsNp-8m0"], 0, "medium");
         event.target.playVideo();
       }
 
@@ -268,22 +448,10 @@ Indexical Fridge by Jun Wang</p>
       function stopVideo() {
         player.stopVideo();
       }
-
-</script>
-<script> 
-//top menu
-$(window).scroll(function (event) {
-    var scroll = $(window).scrollTop();
-    if(scroll < 50){
-        console.log("expand menu");
-        $(".menu_holder").removeClass('collapsemenu').addClass('expandmenu');
-    }else{
-        console.log("collapse menu");
-        $(".menu_holder").removeClass('expandmenu').addClass('collapsemenu');
-    }
+        
+ </script> 
+ -->
+ 
+  </footer>
    
-});</script>
-<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
-</body>
-<footer> Copyright &copy; 2014 <a id="footer" href="http://metalab.harvard.edu/">metaLAB at Harvard </a> All rights reserved. </footer>
 </html>
