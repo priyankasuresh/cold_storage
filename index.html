@@ -293,28 +293,55 @@ Indexical Fridge by Jun Wang</p>
 	//Loads Youtube IFrame Player API:
     var tag = document.createElement('script');
     
+    // intro video vars
     tag.src = "https://www.youtube.com/iframe_api";
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-        
     var intro;
+
+    // main video vars
+    var secondtag = document.createElement('script');
+    secondtag.src = "https://www.youtube.com/iframe_api";
+    var secondScriptTag = document.getElementsByTagName('script')[0];
+    secondScriptTag.parentNode.insertBefore(secondtag, secondScriptTag);
+        var module;    
+    var currentModule = 0;
+    var player;
+    
+    // create YT video objects
     function onYouTubeIframeAPIReady() {
-    intro = new YT.Player('intro', {
-		height: 583,
-		width: 1000,
-		videoId: 'IYFuz8d8WzQ',
-		playerVars: {
-		         'autoplay':1,
-		         'controls':0,
-		         'showinfo':0,
-		         'modestbranding':1,
-		         'rel':0},
-		events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
+        intro = new YT.Player('intro', {
+    		height: 583,
+    		width: 1000,
+    		videoId: 'IYFuz8d8WzQ',
+    		playerVars: {
+    		         'autoplay':1,
+    		         'controls':1,
+    		         'showinfo':0,
+    		         'modestbranding':1,
+    		         'rel':0},
+    		events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onIntroPlayerStateChange
                 }
-                                    });
-                                        }                                 
+            });
+
+        player = new YT.Player('player', {
+            height: '640',
+            width: '1000',
+            videoId: 'MstFsNp-8m0',
+            playerVars: {
+                         'autoplay':1,
+                         'controls':1,
+                         'showinfo':0,
+                         'modestbranding':1,
+                         'rel':0},
+            events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onMainPlayerStateChange
+                  }
+        });
+    }                                 
 
 	//Initiates playback
     function onPlayerReady(event) {
@@ -322,8 +349,8 @@ Indexical Fridge by Jun Wang</p>
       }
                 
    //Trigger movement to next ID on playback stop - making this up
-   	function onPlayerStateChange(event){
-   			console.log(event);
+   	function onIntroPlayerStateChange(event){
+   		  console.log(event);
 	      if (event.data === 2){
 	      
 			  $("html, body").animate({scrollTop : $('#player').offset().top }, 600);
@@ -331,41 +358,9 @@ Indexical Fridge by Jun Wang</p>
 	       }
 			            
     //Trigger pause in video if user moves to the next ID
- </script>
-    
- <!--
- <script>
-    var secondtag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    var secondScriptTag = document.getElementsByTagName('script')[0];
-    secondScriptTag.parentNode.insertBefore(secondtag, secondScriptTag);
-        
-    var module;    
-    var currentModule = 0;
-    var player;
-    function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-    height: '640',
-    width: '1000',
-    videoId: 'MstFsNp-8m0',
-    playerVars: {
-		         'autoplay':1,
-		         'controls':0,
-		         'showinfo':0,
-		         'modestbranding':1,
-		         'rel':0},
-    events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-});
-}
 
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
 
-      function onPlayerStateChange(event) {
+      function onMainPlayerStateChange(event) {
       var t;
         if (event.data == YT.PlayerState.PLAYING) {
             setInterval(function(){
@@ -450,7 +445,7 @@ Indexical Fridge by Jun Wang</p>
       }
         
  </script> 
- -->
+ 
  
   </footer>
    
