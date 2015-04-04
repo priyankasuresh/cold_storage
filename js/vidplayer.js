@@ -1,34 +1,79 @@
+    //Loads Youtube IFrame Player API:
     var tag = document.createElement('script');
-    tag.src = "http://www.youtube.com/iframe_api";
+    
+    // intro video vars
+    tag.src = "https://www.youtube.com/iframe_api";
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-        
-    var module;    
+    var intro;
+
+    // main video vars
+    var secondtag = document.createElement('script');
+    secondtag.src = "https://www.youtube.com/iframe_api";
+    var secondScriptTag = document.getElementsByTagName('script')[0];
+    secondScriptTag.parentNode.insertBefore(secondtag, secondScriptTag);
+        var module;    
     var currentModule = 0;
     var player;
+    
+    // create YT video objects
     function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-    height: '640',
-    width: '1000',
-    //videoId: 'IYFuz8d8WzQ',
-    events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-});
-}
+        intro = new YT.Player('intro', {
+            height: 583,
+            width: 1000,
+            videoId: 'IYFuz8d8WzQ',
+            playerVars: {
+                     'autoplay':1,
+                     'controls':1,
+                     'showinfo':0,
+                     'modestbranding':1,
+                     'rel':0},
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onIntroPlayerStateChange
+                }
+            });
 
-      function onPlayerReady(event) {
-        event.target.cuePlaylist(["IYFuz8d8WzQ","MstFsNp-8m0"], 0, "medium");
-        event.target.playVideo();
+        player = new YT.Player('player', {
+            height: '640',
+            width: '1000',
+            videoId: 'MstFsNp-8m0',
+            playerVars: {
+                         'autoplay':0,
+                         'controls':1,
+                         'showinfo':0,
+                         'modestbranding':1,
+                         'rel':0},
+            events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onMainPlayerStateChange
+                  }
+        });
+    }                                 
+
+    //Initiates playback
+    function onPlayerReady(event) {
+    event.target.playVideo();
       }
+                
+   //Trigger movement to next ID on playback stop - making this up
+    function onIntroPlayerStateChange(event){
+          console.log(event);
+          if (event.data === 2){
+          
+              $("html, body").animate({scrollTop : $('#player').offset().top }, 600);
+              } 
+           }
+                        
+    //Trigger pause in video if user moves to the next ID
 
-      function onPlayerStateChange(event) {
+
+      function onMainPlayerStateChange(event) {
       var t;
         if (event.data == YT.PlayerState.PLAYING) {
             setInterval(function(){
             t = player.getCurrentTime();
-            // console.log(t);
+            console.log(t);
 
     if(t < 224) { module = 1;   modulename = "one"; }
     else if(t< 353) { module = 2; modulename = "two"; }
@@ -44,7 +89,7 @@
     var count=0;
     var vaultdata = {};
  
-    $.getJSON('data/coldstorage.json', function(chone) {
+    $.getJSON('coldstorage.json', function(chone) {
     count=chone.length;
     var firstIndex=0,lastIndex=0;
     $.each(chone, function(i,val) {
@@ -106,4 +151,3 @@
       function stopVideo() {
         player.stopVideo();
       }
-
