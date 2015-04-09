@@ -15,6 +15,9 @@
       var module;    
   var currentModule = 0;
   var player;
+
+  // floorplan nav
+  var jumplinks = [];
   
   // create YT video objects
   function onYouTubeIframeAPIReady() {
@@ -45,14 +48,28 @@
                        'modestbranding':1,
                        'rel':0},
           events: {
-                  'onReady': onPlayerReady,
+                  // 'onReady': onPlayerReady,
                   'onStateChange': onMainPlayerStateChange
                 }
       });
       // initiate floorplan navigation
-      floorNav();
+       // Add event listeners to each fp section
+      // for(var i = 0; i < 7; i++){
+      //   jumplinks.push($('#fp'+(i+1)));
+      //   console.log(jumplinks[i]);
+      //   var t = jumplinks[i].data("start");
+      //   console.log(jumplinks[i] + " data-start: " + t);
+      //   jumplinks[i].click(floorNav(i, t));
+      // }
+      for(var i = 1; i <= 7; i++){
+        var jumplink = $('#fp'+(i));
+        console.log(jumplink);
+        var t =jumplink.data("start");
+        console.log(jumplink + " data-start: " + t);
+        jumplink.click(floorNav(i, t));
+      }
 
-      console.log($('#fp1'));
+
   }                                 
 
   //Initiates playback
@@ -156,21 +173,12 @@ function onMainPlayerStateChange(event) {
   }
 
 // Navigation from the floor plan - main video is called "player"
-
-function floorNav(){
-  // Add event listeners to each fp section
-  var jumplinks = [];
-  for(var i = 1; i <=7; i++){
-    console.log("blahhhhh");
-    console.log($('#fp'+i));
-    var jumplink = $('#fp'+i);
-    var t = jumplink.getAttribute("data-start");
-    console.log(jumplink + " data-start: " + t);
-    jumplink.addEventListener("click", function(e){
-      event.preventDefault();
-      player.currentTime = t;
-      player.play();
-    })
+function floorNav(j, t){
+  return function (e){
+    console.log("change to module: " + (j+1) + ", time: "+t);
+    player.seekTo(t);
+    player.playVideo();
   }
+
 }
 
