@@ -10,6 +10,22 @@ font-family: "Bebas Neue";
 src: url("../fonts/BebasNeue.otf") format("opentype");
 }
 
+@font-face {
+  font-family: 'Courier';
+  src: url('Courier.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#copyright{
+	font-family: courier;
+	font-weight: 100;
+	font-size: 10px;
+}
+
+.courier{
+	font-family: 'Courier';
+}
 
 body {
     width: 100%;
@@ -77,6 +93,7 @@ a:focus {
     display: none;
 }
 
+
 .navbar-custom .navbar-brand {
     font-weight: normal;
     font-family: "Bebas Neue",sans-serif;
@@ -100,7 +117,7 @@ a:focus {
 
 .navbar-custom a {
     color: #fff;
-    font-family: "bebas-neue",sans-serif;
+    font-family: "Courier",serif;
 }
 
 .navbar-custom .nav li a {
@@ -134,28 +151,228 @@ a:focus {
     color: #fff;
 }
 
+<<<<<<< HEAD
 #main_container{
    margin-left: 50px;
    padding-top: 50px;
 }
 
+=======
+
+
+#fb{
+	margin-top: 17px;
+	margin-right: -12px;
+	background-image: url(../img/FB-f-Logo__white_12.png);
+	background-repeat: no-repeat;
+}
+
+#fb:hover{
+	margin-top: 17px;
+	margin-right: -12px;
+	background-image: url(../img/FB-f-Logo__gray_12.png);
+	background-repeat: no-repeat;
+}
+
+#fb:visited{
+	margin-top: 17px;
+	margin-right: -12px;
+	background-image: url(../img/FB-f-Logo__white_12.png);
+	background-repeat: no-repeat;
+}
+
+#twt{
+	margin-top: 17px;
+	margin-right: -25px;
+	background-image: url(../img/twitter_logo_12_white.png);
+	background-repeat: no-repeat;
+}
+
+#twt:hover{
+	margin-top: 17px;
+	margin-right: -25px;
+	background-image: url(../img/twitter_logo_12_gray.png);
+	background-repeat: no-repeat;
+}
+
+#twt:visited{
+	margin-top: 17px;
+	margin-right: -25px;
+	background-image: url(../img/twitter_logo_12_white.png);
+	background-repeat: no-repeat;
+}
+
+#ig{
+	margin-top: 17px;
+	margin-left: 15px;
+	margin-right: -18px;
+	background-image: url(../img/ig_12_white.png);
+	background-repeat: no-repeat;
+}
+
+#ig:hover{
+	margin-top: 17px;
+	margin-left: 15px;
+	margin-right: -18px;
+	background-image: url(../img/ig_12_gray.png);
+	background-repeat: no-repeat;
+}
+
+#ig:visited{
+	margin-top: 17px;
+	margin-left: 15px;
+	margin-right: -18px;
+	background-image: url(../img/ig_12_white.png);
+	background-repeat: no-repeat;
+}
+
+
+
+>>>>>>> 4d9c9dd977780f1d1fc269e56ded34d966f6dff1
 @media(min-width:768px) {
     .navbar-custom {
         padding: 20px 0;
         border-bottom: 0;
         letter-spacing: 1px;
         background: 0 0;
-        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
-        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
-        transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -webkit-transition: background 1s ease-in-out,padding 1s ease-in-out;
+        -moz-transition: background 1s ease-in-out,padding 1s ease-in-out;
+        transition: background 1s ease-in-out,padding 1s ease-in-out;
+        
     }
 
     .navbar-custom.top-nav-collapse {
+    	-webkit-transition: opacity 1s ease-in-out;
+		-moz-transition: opacity 1s ease-in-out;
+		-o-transition: opacity 1s ease-in-out;
+		transition: opacity 1s ease-in-out;
         padding: 0;
+        background: #000; 
+        -webkit-transition: background 2s linear;
+		-moz-transition: background 2s linear;
+		-o-transition: background 2s linear;
+		-ms-transition: background 2s linear;
+		transition: background 2s linear;
         border-bottom: 1px solid rgba(255,255,255,.3);
-        background: #000;
         display: inline;
     }
+
+#film{
+	width: 100%;
+	margin: 0 auto;
+}
+
+#player{
+	margin-left: 15px;
+	padding-top: 50px;
+}
+
+#credouter{
+	height: 380px;
+	width: 1000px;
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
+#credinner{
+	width: 6000px;
+}
+
+#cred1{
+	display: inline-block;
+	height: 380px;
+	width: 1068px;
+	background-image: url(../img/creditsi_01.png);
+	float: left;
+}
+
+#cred1:hover{
+	display: inline-block;
+	height: 380px;
+	width: 1068px;
+	background-image: url(../img/creditsv_01.png);
+	float: left;
+	
+}
+
+#cred2{
+	display: inline-block;
+	height: 380px;
+	width: 961px;
+	background-image: url(../img/creditsi_02.png);
+	float: left;
+}
+
+#cred2:hover{
+	display: inline-block;
+	height: 380px;
+	width: 961px;
+	background-image: url(../img/creditsv_02.png);
+	float: left;
+}
+
+#cred3{
+	display: inline-block;
+	height: 380px;
+	width: 971px;
+	background-image: url(../img/creditsi_03.png);
+	float: left;
+}
+
+#cred3:hover{
+	display: inline-block;
+	height: 380px;
+	width: 971px;
+	background-image: url(../img/creditsv_03.png);
+	float: left;
+}
+
+#cred4{
+	display: inline-block;
+	height: 380px;
+	width: 974px;
+	background-image: url(../img/creditsi_04.png);
+	float: left;
+}
+
+#cred4:hover{
+	display: inline-block;
+	height: 380px;
+	width: 974px;
+	background-image: url(../img/creditsv_04.png);
+	float: left;
+}
+
+#cred5{
+	display: inline-block;
+	height: 380px;
+	width: 961px;
+	background-image: url(../img/creditsi_05.png);
+	float: left;
+}
+
+#cred5:hover{
+	display: inline-block;
+	height: 380px;
+	width: 961px;
+	background-image: url(../img/creditsv_05.png);
+	float: left;
+}
+
+#cred6{
+	display: inline-block;
+	height: 380px;
+	width: 1065px;
+	background-image: url(../img/creditsi_06.png);
+	float: left;
+}
+
+#cred6:hover{
+	display: inline-block;
+	height: 380px;
+	width: 1065px;
+	background-image: url(../img/creditsv_06.png);
+	float: left;
 }
 
 .intro {
@@ -175,7 +392,7 @@ a:focus {
 
 .intro .intro-body {
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: top;
 }
 
 .intro .intro-body .brand-heading {
@@ -281,6 +498,7 @@ a:focus {
 
 .content-section {
     padding-top: 50px;
+    width: 1000 px; 
     
 }
 
@@ -413,3 +631,112 @@ body {
 	font-family: "Bebas Neue",sans-serif;
 	font-weight: normal;
 }
+
+#picklist{
+	width: 1000px;
+	background-color: black;
+	display: block;
+	font-family: 'Courier';
+	color: black;
+}
+
+#picklist p{
+	margin-left: 30px;
+}
+
+#about1{
+	display: block;
+	width: 1000px;
+	height: 12px;
+	margin-bottom: 15px;
+	background-image: url("../img/about1.png");
+	background-repeat: no-repeat;
+}
+
+#about1:hover{
+	display: block;
+	width: 1000px;
+	height: 12px;
+	margin-bottom: 15px;
+	background-image: url("../img/about1l.png");
+	background-repeat: no-repeat;
+}
+
+#about1:active{
+	display: block;
+	width: 1000px;
+	height: 209px;
+	margin-bottom: 15px;
+	background-image: url("../img/about1h.png");
+	background-repeat: no-repeat;
+}
+
+#about2{
+	display: block;
+	width: 1000px;
+	height: 12px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	background-image: url("../img/about2.png");
+	background-repeat: no-repeat;
+}
+
+#about2:hover{
+	display: block;
+	width: 1000px;
+	height: 12px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	background-image: url("../img/about2l.png");
+	background-repeat: no-repeat;
+}
+
+#about2:active{
+	display: block;
+	width: 1000px;
+	height: 165px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	background-image: url("../img/about2h.png");
+	background-repeat: no-repeat;
+}
+
+
+
+#about3{
+	display: block;
+	width: 1000px;
+	height: 12px;
+	margin-top: 15px;
+	padding-bottom: 15px;
+	background-image: url("../img/about3.png");
+	background-repeat: no-repeat;
+}
+
+#about3:hover{
+	display: block;
+	width: 1000px;
+	height: 12px;
+	margin-top: 15px;
+	padding-bottom: 15px;
+	background-image: url("../img/about3l.png");
+	background-repeat: no-repeat;
+}
+
+#about3:active{
+	display: block;
+	width: 1000px;
+	height: 402px;
+	margin-top: 15px;
+	padding-bottom: 15px;
+	background-image: url("../img/about3h.png");
+	background-repeat: no-repeat;
+}
+
+#about4{
+	display: block;
+	width: 1000px;
+	height: 12px;
+}
+
+

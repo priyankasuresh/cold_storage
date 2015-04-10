@@ -1,3 +1,4 @@
+<<<<<<< HEAD
   //Loads Youtube IFrame Player API:
   var tag = document.createElement('script');
   
@@ -55,6 +56,60 @@
      
       // initiate floorplan navigation
       // Add event listeners to each fp section
+=======
+    //Loads Youtube IFrame Player API:
+    var tag = document.createElement('script');
+    
+    // intro video vars
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    var intro;
+
+    // main video vars
+    var secondtag = document.createElement('script');
+    secondtag.src = "https://www.youtube.com/iframe_api";
+    var secondScriptTag = document.getElementsByTagName('script')[0];
+    secondScriptTag.parentNode.insertBefore(secondtag, secondScriptTag);
+        var module;    
+    var currentModule = 0;
+    var player;
+    
+    // create YT video objects
+    function onYouTubeIframeAPIReady() {
+        intro = new YT.Player('intro', {
+            height: 563,
+            width: 1000,
+            videoId: 'IYFuz8d8WzQ',
+            playerVars: {
+                     'autoplay':1,
+                     'controls':1,
+                     'showinfo':0,
+                     'modestbranding':1,
+                     'rel':0},
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onIntroPlayerStateChange
+                }
+            });
+
+        player = new YT.Player('player', {
+            height: '563',
+            width: '1000',
+            videoId: 'MstFsNp-8m0',
+            playerVars: {
+                         'autoplay':0,
+                         'controls':1,
+                         'showinfo':0,
+                         'modestbranding':1,
+                         'rel':0},
+            events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onMainPlayerStateChange
+                  }
+        });
+    }                                 
+>>>>>>> 4d9c9dd977780f1d1fc269e56ded34d966f6dff1
 
       for(var i = 1; i <= 7; i++){
         var jumplink = $('#fp'+(i));
