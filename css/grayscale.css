@@ -134,6 +134,11 @@ a:focus {
     color: #fff;
 }
 
+#main_container{
+   margin-left: 50px;
+   padding-top: 50px;
+}
+
 @media(min-width:768px) {
     .navbar-custom {
         padding: 20px 0;
