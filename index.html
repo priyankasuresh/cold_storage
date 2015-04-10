@@ -28,9 +28,12 @@
     <script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/lib/jquery.easing.min.js"></script>
     <script type="text/javascript" src="js/lib/grayscale.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.mousewheel.min.js"></script>
     <!-- custom js -->
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/Main.js" ></script>
+    <script type="text/javascript" src="js/scanlist.js" ></script>
+     <script type="text/javascript" src="js/mousewheel.js" ></script>
 </head>
 					
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -56,7 +59,7 @@
 	<!-- Navigation -->
 <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
+        <div class="container" id="navbg">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
@@ -74,23 +77,32 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll tk-bebas-neue" href="#film">FILM</a>
+                        <a class="page-scroll courier" href="#film">FILM</a>
                     </li>
                      <li>
-                        <a class="page-scroll tk-bebas-neue" href="#floorplan">FLOOR PLAN</a>
+                        <a class="page-scroll courier" href="#floorplan">FLOOR PLAN</a>
                     </li>
                     <li>
-                        <a class="page-scroll tk-bebas-neue" href="#vault">VAULT</a>
+                        <a class="page-scroll courier" href="#vault">VAULT</a>
                     </li>
                     <li>
-                        <a class="page-scroll tk-bebas-neue" href="#about">ABOUT</a>
+                        <a class="page-scroll courier" href="#about">ABOUT</a>
                     </li>
                     <li>
-                        <a class="page-scroll tk-bebas-neue" href="#credits">CREDITS</a>
+                        <a class="page-scroll courier" href="#credits">CREDITS</a>
+                    </li>
+                    <li id="fb">
+                    	<a href="http://www.facebook.com/coldstoragedoc" target="_blank"></a>
+                    </li>
+                    <li id="twt">
+                    	<a href="http://www.twitter.com/coldstoragedoc" target="_blank"></a>
+                    </li>
+                    <li id="ig">
+                    	<a href="http://www.instagram.com/coldstoragedoc" target="_blank"></a>
                     </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
+            <!-- /.bbar-collapse -->
         </div>
         
          </nav>
@@ -114,7 +126,7 @@
     </header>
 
     <!-- Film Section -->
-    <section id="film" class="container content-section text-left">
+    <section id="film">
     	<div class="container">
        		 <div class="row">
             	  <div id="player"></div>
@@ -127,9 +139,7 @@
     <section id="floorplan" class="floorplan content-section text-left">
         <div class="download-section">
 					<div class="container">
-						<div class="row">
-								
-									 <h2 class="headingfp tk-bebas-neue">Floor Plan of the Harvard Depository</h2> 
+						<div class="row">				  
             <div class="floorplan-imgs">
                 <img id="fp1" data-start="0" class="fp-section" src="./img/FloorplanNav/1_off.jpg">
                 <img id="fp2" data-start="224" class="fp-section" src="./img/FloorplanNav/2_off.jpg">
@@ -145,11 +155,9 @@
     </section>
     
            <!-- Vault Section -->
-    <section id="vault" class="container content-section text-left">
+    <section id="vault" class="container content-section">
         <div class="row">
-            
-            	<h2 class="thevault tk-bebas-neue">The Vault</h2>
-					<div class="navbutts"><a id="prev-bt">previous item</a><a id="next-bt">next item</a></div>
+					<div class="navbutts courier"><a id="prev-bt">previous item</a><a id="next-bt">next item</a></div>
 					<div id="vault_null"><img src="./img/Vault_null.png"></div>
 						<div id="infobox" class="one chapter">
 								<div class="pexp">
@@ -169,23 +177,15 @@
     <section id="about" class="content-section text-left">
         <div class="download-section">
             <div class="container">
-                <div class="col-lg-8 col-lg-offset-2">
-                      <h2 class="tk-bebas-neue">About</h2>
-
-<p>Cold Storage is a 24-minute documentary short film interlinked with an expanding collection of intertextual media artifacts, an archive of experiments and experiences in and around the Harvard Depository ("HD"), Harvard's off-site library storage facility. Taken together, the film and its associated media collection explore how libraries have changed from the "shrines to knowledge" of the past to the evolving networks that interconnect vast warehouses and patrons of the present. By looking at objects as varied as books, databases, and air-conditioning systems, what conversations about libraries of the future may be prompted? </br></p>
-
-<p><b>The Library Beyond the Book</b></br>
-
-Co-written by Jeffrey Schnapp and Matthew Battles, The Library Beyond the Book combines a deep study of the library's history with reflections and provocations for thinking about the future of libraries, in part drawing from their research initiatives at metaLAB. The film takes its name from the closing chapter of the book, Cold Storage, which is based upon an initial media reconnaissance mission to the Harvard Depository. It was also in this encounter that the impulse to dialogue with Alain Resnais' Toute la m&#233;moire du monde was born.</p> </br>
-
-<p><b>Humanities Studio I : Cold Storage</b></br>
-
-In the Spring of 2014, the metaLAB team taught its first course under the "humanities studio" rubric, combining a traditional humanities class experience with a making and process-based critical studio environment. Existing outside any single school or department, the course encouraged interdisciplinary enrollment, which resulted in a class composed of undergraduates, students from Harvard's Graduate School of Design, a student from the Graduate School of Education, and a cross-enrollment from MIT. </p></br>
-
-<p>Starting from a series of storyboards imagining the journey of a book from the stacks to the hands of library patrons, the students and the teaching team then embarked on a series of field trips to the Harvard Depository site in Southborough-first creating a collective repository of photographs from which to develop more illustrated storyboards and eventually video and audio documentation that, while also shared to a degree, targeted students' individual production and editing capacities. While most student projects were based in video, a preliminary set of wireframes envisioning what this website might look like and a sound-mapping of the facility with wireframes for a corresponding interface were also developed in the context of the class.</p> </br>
-</br>
-
-                       </div>
+                <div>
+					  	<div id="picklist">
+					  		<img src="./img/pcklst_header.png">
+					  		<a id="about1"></a>
+					  		<a id="about2"></a>
+					  		<a id="about3"></a>
+					  		<a id="about4"></a>
+					  	</div>
+                </div>
             </div>
         </div>
     </section>
@@ -193,80 +193,18 @@ In the Spring of 2014, the metaLAB team taught its first course under the "human
     <!-- Credits Section -->
     <section id="credits" class="container content-section text-left">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
+            <div class="col-lg-8">
                <h2 class="tk-bebas-neue">Credits</h2></br>
-<p>
-<b>The Film</b></br>
-</br>
-Jeffrey Schnapp - Concept, Producer, Writer, Narrator</br>
-Cristoforo Magliozzi - Director, Director of Photography, Editor</br>
-Matthew Battles - Executive Producer</br>
-Peter McMurray - Line Producer, Production Sound</br>
-</br>
-The film comments upon and explores ideas expressed in the 1956 film,
-Toute la m&#233;moire du monde, directed by Alain Resnais, and incorporates 
-audio, video, and narrative text from that work. </br>
-</br>
-The film incorporates video clips from The Harvard Depository, a short made
-by the Harvard University Library. President and Fellows of Harvard College, 1993.</br>
-</br>
-Footage of clouds by Beachfront Broll, and licensed under a Creative Commons Attribution 3.0 License. The footage has been altered from its original version. </br>
-</br>
-<b>The Music</b></br>
-</br>
-    Chris Barone</br>
-    Jeremy Galloway</br>
-    Austin McMahon</br>
-    Matt McMurray</br>
-    Tamar Sella</br>
-</br>
-"Plastic Mind (Honky Tonk Project Cinematic Mix)" by Sound Spread</br>
-"White Prickly Poppy" by Aaron Russell</br>
-"Forest of Diodes" by Red Fog</br>
-"Train Jacker" by Room of Wires</br>
-"A Sealed Night (Ambient)" by Moby</br>
-</br>
-<b>Special Thanks</b></br>
-</br>
-Keith Lyseth</br>
-Dan Moulton</br>
-Pat O'Brien</br>
-Matthew Sheehy</br>
-Seth Torres</br>
-Sarah Thomas</br>
-Sidney Verba</br>
-Cyberlaw Clinic at the Berkman Center for Internet and Society</br>
-The Harvard Depository Staff</br>
-The Harvard Media Production Center Staff</br>
-The Students of Humanities Studio I</br>
-</br>
-<b>We Would Also Like to Thank</b></br>
-</br>
-Ebru Boyaci </br>
-Stefano Canzio</br>
-Krystelle Denis</br>
-Isabelle DeSisto</br>
-Brianna MacGregor</br>
-Tim Maly</br>
-Ivan Sigal </br>
-Priyanka Suresh </br>
-James Yamada</br>
-Jessica Yurkovsky</br>
-</br>
-D&#233;di&#233; &#224; Alain Resnais </br>
-1922-2014</br>
-</br>
-<b>The Website</b></br>
-</br>
-In addition to materials generated by the production team, provided by the Harvard Library, and copied with permission from the Harvard Archives, the website also features the following student projects:</br>
-</br>
-9006 by Marshall Ford</br>
-Re[C]ompos[S]ed by Claire Doussard</br>
-Bridging the Border - Transferring HD Materials by Allison Goffman</br>
-The Harvard Depository by Peter Kirschman</br>
-Metadata by Joyce Liu</br>
-Color in HD by Jennifer Mills</br>
-Indexical Fridge by Jun Wang</p> 
+               <div id="credouter">
+               		<div id="credinner">
+				   			<a id="cred1"></a>
+				   			<a id="cred2"></a>
+				   			<a id="cred3"></a>
+				   			<a id="cred4"></a>
+				   			<a id="cred5"></a>
+				   			<a id="cred6"></a>
+               		</div>
+               </div>
             </div>
         </div>
     </section>
@@ -275,8 +213,8 @@ Indexical Fridge by Jun Wang</p>
 
     <!-- Footer -->
     <footer>
-        <div class="container text-center">
-            <p>Copyright &copy; metaLAB at Harvard 2015</p>
+        <div class="container text-center courier">
+            <div id="copyright">COPYRIGHT &copy; metaLAB AT HARVARD 2015</div>
         </div>
 
 <script type="text/javascript" src="js/vidplayer.js"></script>

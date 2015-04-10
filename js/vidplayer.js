@@ -19,7 +19,7 @@
     // create YT video objects
     function onYouTubeIframeAPIReady() {
         intro = new YT.Player('intro', {
-            height: 583,
+            height: 563,
             width: 1000,
             videoId: 'IYFuz8d8WzQ',
             playerVars: {
@@ -35,7 +35,7 @@
             });
 
         player = new YT.Player('player', {
-            height: '640',
+            height: '563',
             width: '1000',
             videoId: 'MstFsNp-8m0',
             playerVars: {
