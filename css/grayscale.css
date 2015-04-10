@@ -151,14 +151,10 @@ a:focus {
     color: #fff;
 }
 
-<<<<<<< HEAD
 #main_container{
-   margin-left: 50px;
+   margin-left: 1px;
    padding-top: 50px;
 }
-
-=======
-
 
 #fb{
 	margin-top: 17px;
@@ -226,9 +222,6 @@ a:focus {
 	background-repeat: no-repeat;
 }
 
-
-
->>>>>>> 4d9c9dd977780f1d1fc269e56ded34d966f6dff1
 @media(min-width:768px) {
     .navbar-custom {
         padding: 20px 0;
