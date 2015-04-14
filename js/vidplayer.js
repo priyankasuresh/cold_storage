@@ -116,24 +116,26 @@ function onMainPlayerStateChange(event) {
             if(!vaultdata[val.chapter]) vaultdata[val.chapter] = [];
             vaultdata[val.chapter].push(val);
           });
-        });
 
-        if(module != currentModule) {
-          $("#fp"+currentModule).attr("src", "./img/FloorplanNav/"+currentModule+"_off.jpg");
-          currentModule = module;
-          console.log("MODULE CHANGE");
-          console.log("module "+currentModule);
-          console.log(modulename);
-          $("#fp"+currentModule).attr("src", "./img/FloorplanNav/"+currentModule+"_on.jpg");
-          //$(".chapter").hide();
-          $("."+modulename).show();
-          $("#currentembed").html("");
-          var v = vaultdata[module][0];  /// this is throwing an error!!
-          $("#currentembed").append($("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.location));
-          console.log(v);
-          $('#player-digital-title-one').html(v.description);
-          $('#player-digital-name-one').html(v.item_title);
-        }
+          // run after JSON has loaded
+          if(module != currentModule) {
+            $("#fp"+currentModule).attr("src", "./img/FloorplanNav/"+currentModule+"_off.jpg");
+            currentModule = module;
+            console.log("MODULE CHANGE");
+            console.log("module "+currentModule);
+            console.log(modulename);
+            $("#fp"+currentModule).attr("src", "./img/FloorplanNav/"+currentModule+"_on.jpg");
+            //$(".chapter").hide();
+            $("."+modulename).show();
+            $("#currentembed").html("");
+            var v = vaultdata[module][0]; 
+            $("#currentembed").append($("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.location));
+            console.log(v);
+            $('#player-digital-title-one').html(v.description);
+            $('#player-digital-name-one').html(v.item_title);
+          }
+
+        });
 
       },1000);
 
