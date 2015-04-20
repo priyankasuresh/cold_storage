@@ -67,6 +67,34 @@
 
       // "vault_null" click event pauses intro, plays main vid
       $("#vault_null").click(function(){ intro.pauseVideo(); });
+
+      // waypoints: pause videos when no longer in focus
+      var introWaypt = new Waypoint({
+        element: $("#intro"),
+        handler: function(direction){
+
+        }
+      });
+
+      var mainWaypt = new Waypoint({
+        element: $("#main_player"),
+        handler: function(direction){
+          intro.pauseVideo(); // triggers main player & vault also
+          console.log("main waypt "+direction);
+          if(direction=="up"){
+            main_player.playVideo();
+          }
+        }
+      });
+
+      var vaultWaypt = new Waypoint({
+        element: $("#vault"),
+        handler: function(){
+          console.log("vault waypt");
+          main_player.pauseVideo();
+        }
+      })
+
   }                                 
 
   //Initiates playback
@@ -172,7 +200,7 @@ function onMainPlayerStateChange(event) {
     main_player.stopVideo();
   }
 
-// Navigation from the floor plan - main video is called "player"
+// Navigation from the floor plan
 function floorNav(j, t){
   return function (e){
     main_player.seekTo(t);
