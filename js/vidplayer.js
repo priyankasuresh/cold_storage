@@ -134,6 +134,8 @@ function onMainPlayerStateChange(event) {
             $('#player-digital-title-one').html(v.description);
             $('#player-digital-name-one').html(v.item_title);
           }
+          $("#vault_null").hide();
+          $("#infobox").show();
 
         });
 
@@ -144,8 +146,8 @@ function onMainPlayerStateChange(event) {
       clickIndex = clickIndex + 1;;       
       if(clickIndex >= vaultdata[currentModule].length) clickIndex = 0;
     $("#currentembed").html("");
-  var v = vaultdata[currentModule][clickIndex];
-  $("#currentembed").append($("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.location));
+    var v = vaultdata[currentModule][clickIndex];
+    $("#currentembed").append($("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.location));
       $('#player-digital-title-one').html(v.description);
       $('#player-digital-name-one').html(v.item_title);
       var vaultshow=document.getElementById("vault_null");
