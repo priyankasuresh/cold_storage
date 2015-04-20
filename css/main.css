@@ -1,0 +1,17 @@
+/* Main.css
+ custom styles for the main cold storage page
+*/
+
+/* Vault nav buttons */
+.navbutts{
+	margin-bottom: 1.3em;
+}
+
+#prev-bt{
+	margin-left: 3em;
+}
+
+#next-bt{
+	margin-right: 3em;
+	float: right;
+}
