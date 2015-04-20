@@ -58,16 +58,15 @@
 
       for(var i = 1; i <= 7; i++){
         var jumplink = $('#fp'+(i));
-        console.log(jumplink);
         var t =jumplink.data("start");
-        console.log(jumplink + " data-start: " + t);
         jumplink.click(floorNav(i, t));
       }
 
       // "enter" button event listener pauses intro, which in turn plays main
-      $("#enter").click(function(d){
-        intro.pauseVideo();
-      })
+      $("#enter").click(function(){ intro.pauseVideo();});
+
+      // "vault_null" click event pauses intro, plays main vid
+      $("#vault_null").click(function(){ intro.pauseVideo(); });
   }                                 
 
   //Initiates playback
@@ -77,7 +76,6 @@ function onPlayerReady(event) {
               
  //Trigger movement to next ID on playback stop - making this up
   function onIntroPlayerStateChange(event){
-        // console.log(event);
         if (event.data === 2){
         
             $("html, body").animate({scrollTop : $('#main_player').offset().top }, 600);
@@ -93,7 +91,6 @@ function onMainPlayerStateChange(event) {
     if (event.data == YT.PlayerState.PLAYING) {
       setInterval(function(){
         t = main_player.getCurrentTime();
-        // console.log(t);
 
         if(t < 224) { module = 1;   modulename = "one"; }
         else if(t< 353) { module = 2; modulename = "two"; }
@@ -178,7 +175,6 @@ function onMainPlayerStateChange(event) {
 // Navigation from the floor plan - main video is called "player"
 function floorNav(j, t){
   return function (e){
-    console.log("change to module: " + (j) + ", time: "+t);
     main_player.seekTo(t);
     main_player.pauseVideo();
   }
