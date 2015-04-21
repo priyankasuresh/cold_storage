@@ -27,7 +27,7 @@
           videoId: 'IYFuz8d8WzQ',
           playerVars: {
                    'autoplay':1,
-                   'controls':1,
+                   'controls':0,
                    'showinfo':0,
                    'modestbranding':1,
                    'rel':0},
@@ -43,7 +43,7 @@
           videoId: 'MstFsNp-8m0',
           playerVars: {
                        'autoplay':0,
-                       'controls':1,
+                       'controls':0,
                        'showinfo':0,
                        'modestbranding':1,
                        'rel':0},
@@ -58,16 +58,43 @@
 
       for(var i = 1; i <= 7; i++){
         var jumplink = $('#fp'+(i));
-        console.log(jumplink);
         var t =jumplink.data("start");
-        console.log(jumplink + " data-start: " + t);
         jumplink.click(floorNav(i, t));
       }
 
       // "enter" button event listener pauses intro, which in turn plays main
-      $("#enter").click(function(d){
-        intro.pauseVideo();
+      $("#enter").click(function(){ intro.pauseVideo();});
+
+      // "vault_null" click event pauses intro, plays main vid
+      $("#vault_null").click(function(){ intro.pauseVideo(); });
+
+      // waypoints: pause videos when no longer in focus
+      var introWaypt = new Waypoint({
+        element: $("#intro"),
+        handler: function(direction){
+
+        }
+      });
+
+      var mainWaypt = new Waypoint({
+        element: $("#main_player"),
+        handler: function(direction){
+          intro.pauseVideo(); // triggers main player & vault also
+          console.log("main waypt "+direction);
+          if(direction=="up"){
+            main_player.playVideo();
+          }
+        }
+      });
+
+      var floorplanWaypt = new Waypoint({
+        element: $("#floorplan"),
+        handler: function(){
+          console.log("floorplan waypt");
+          main_player.pauseVideo();
+        }
       })
+
   }                                 
 
   //Initiates playback
@@ -77,7 +104,6 @@ function onPlayerReady(event) {
               
  //Trigger movement to next ID on playback stop - making this up
   function onIntroPlayerStateChange(event){
-        // console.log(event);
         if (event.data === 2){
         
             $("html, body").animate({scrollTop : $('#main_player').offset().top }, 600);
@@ -93,7 +119,6 @@ function onMainPlayerStateChange(event) {
     if (event.data == YT.PlayerState.PLAYING) {
       setInterval(function(){
         t = main_player.getCurrentTime();
-        // console.log(t);
 
         if(t < 224) { module = 1;   modulename = "one"; }
         else if(t< 353) { module = 2; modulename = "two"; }
@@ -116,24 +141,28 @@ function onMainPlayerStateChange(event) {
             if(!vaultdata[val.chapter]) vaultdata[val.chapter] = [];
             vaultdata[val.chapter].push(val);
           });
-        });
 
-        if(module != currentModule) {
-          $("#fp"+currentModule).attr("src", "./img/FloorplanNav/"+currentModule+"_off.jpg");
-          currentModule = module;
-          console.log("MODULE CHANGE");
-          console.log("module "+currentModule);
-          console.log(modulename);
-          $("#fp"+currentModule).attr("src", "./img/FloorplanNav/"+currentModule+"_on.jpg");
-          //$(".chapter").hide();
-          $("."+modulename).show();
-          $("#currentembed").html("");
-          var v = vaultdata[module][0];  /// this is throwing an error!!
-          $("#currentembed").append($("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.location));
-          console.log(v);
-          $('#player-digital-title-one').html(v.description);
-          $('#player-digital-name-one').html(v.item_title);
-        }
+          // run after JSON has loaded
+          if(module != currentModule) {
+            $("#fp"+currentModule).attr("src", "./img/FloorplanNav/"+currentModule+"_off.jpg");
+            currentModule = module;
+            console.log("MODULE CHANGE");
+            console.log("module "+currentModule);
+            console.log(modulename);
+            $("#fp"+currentModule).attr("src", "./img/FloorplanNav/"+currentModule+"_on.jpg");
+            //$(".chapter").hide();
+            $("."+modulename).show();
+            $("#currentembed").html("");
+            var v = vaultdata[module][0]; 
+            $("#currentembed").append($("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.location));
+            console.log(v);
+            $('#player-digital-title-one').html(v.description);
+            $('#player-digital-name-one').html(v.item_title);
+          }
+          $("#vault_null").hide();
+          $("#infobox").show();
+
+        });
 
       },1000);
 
@@ -142,8 +171,8 @@ function onMainPlayerStateChange(event) {
       clickIndex = clickIndex + 1;;       
       if(clickIndex >= vaultdata[currentModule].length) clickIndex = 0;
     $("#currentembed").html("");
-  var v = vaultdata[currentModule][clickIndex];
-  $("#currentembed").append($("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.location));
+    var v = vaultdata[currentModule][clickIndex];
+    $("#currentembed").append($("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.location));
       $('#player-digital-title-one').html(v.description);
       $('#player-digital-name-one').html(v.item_title);
       var vaultshow=document.getElementById("vault_null");
@@ -171,10 +200,9 @@ function onMainPlayerStateChange(event) {
     main_player.stopVideo();
   }
 
-// Navigation from the floor plan - main video is called "player"
+// Navigation from the floor plan
 function floorNav(j, t){
   return function (e){
-    console.log("change to module: " + (j) + ", time: "+t);
     main_player.seekTo(t);
     main_player.pauseVideo();
   }

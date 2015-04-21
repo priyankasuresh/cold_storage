@@ -14,6 +14,7 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/grayscale.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type"text/css">
     
 		<script src="//use.typekit.net/dqx5ncn.js"></script>
 		<script>try{Typekit.load();}catch(e){}</script>
@@ -29,6 +30,7 @@
     <script type="text/javascript" src="js/lib/jquery.easing.min.js"></script>
     <script type="text/javascript" src="js/lib/grayscale.js"></script>
     <script type="text/javascript" src="js/lib/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.waypoints.min.js"></script>
     <!-- custom js -->
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/Main.js" ></script>
@@ -57,7 +59,6 @@
 	<!--end title slide-->
 	
 	<!-- Navigation -->
-<!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container" id="navbg">
             <div class="navbar-header">
@@ -154,21 +155,23 @@
 				</div>
     </section>
     
-           <!-- Vault Section -->
+        <!-- Vault Section -->
     <section id="vault" class="container content-section">
         <div class="row">
-					<div class="navbutts courier"><a id="prev-bt">previous item</a><a id="next-bt">next item</a></div>
-					<div id="vault_null"><img src="./img/Vault_null.png"></div>
-						<div id="infobox" class="one chapter">
-								<div class="pexp">
-									<div id="player-digital-name-one" class="pname"></div>
-									<div id="player-digital-title-one" class="ptitle"></div>
-								</div>
-									<div id="player-digital-image-one" class="pimage">
-									<div id="currentembed"> </div> </ul>
-									</div>
-									</div>
-            
+			<div id="vault_null"><img src="./img/Vault_null.png"></div>
+            <div id="infobox" class="one chapter">
+                <div class="navbutts courier">
+                    <a id="prev-bt">previous item</a>
+                    <a id="next-bt">next item</a>
+                </div>
+				<div class="pexp">
+					<div id="player-digital-name-one" class="pname"></div>
+                    <div id="player-digital-title-one" class="ptitle"></div>
+				</div>
+				<div id="player-digital-image-one" class="pimage">
+					<div id="currentembed"> </div> 
+				</div>
+			</div>
         </div>
     </section>
 
@@ -218,6 +221,11 @@
         </div>
 
 <script type="text/javascript" src="js/vidplayer.js"></script>
+
+<script type="text/javascript">
+    // hide the vault infobox as soon as the page loads
+    $("#infobox").hide();
+</script>
  
  <!--  uncomment once video player is in vidplayer.js
 
