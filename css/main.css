@@ -2,16 +2,45 @@
  custom styles for the main cold storage page
 */
 
+/* Overall style */
+
+
+
 /* Vault nav buttons */
+
+#infobox{
+	font-family: 'Courier';
+}
+
+#infobox a {
+	color: #ff0000 ;
+}
+
+#infobox a:hover, a:focus{
+	color: #666;
+}
+
 .navbutts{
 	margin-bottom: 1.3em;
+
 }
 
 #prev-bt{
-	margin-left: 3em;
+	margin-left: 0.5em;
+	color: "#ff0000";
+}
+
+
+#prev-bt .fa{
+	margin-right: 1em;
 }
 
 #next-bt{
-	margin-right: 3em;
+	margin-right: 0.5em;
 	float: right;
+	color: "#ff0000";
+}
+
+#next-bt .fa{
+	margin-left: 1em;
 }

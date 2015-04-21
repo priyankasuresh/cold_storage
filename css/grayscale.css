@@ -180,21 +180,21 @@ a:focus {
 #twt{
 	margin-top: 17px;
 	margin-right: -25px;
-	background-image: url(../img/twitter_logo_12_white.png);
+	background-image: url(../img/Twitter_logo_12_white.png);
 	background-repeat: no-repeat;
 }
 
 #twt:hover{
 	margin-top: 17px;
 	margin-right: -25px;
-	background-image: url(../img/twitter_logo_12_gray.png);
+	background-image: url(../img/Twitter_logo_12_gray.png);
 	background-repeat: no-repeat;
 }
 
 #twt:visited{
 	margin-top: 17px;
 	margin-right: -25px;
-	background-image: url(../img/twitter_logo_12_white.png);
+	background-image: url(../img/Twitter_logo_12_white.png);
 	background-repeat: no-repeat;
 }
 
