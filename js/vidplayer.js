@@ -27,7 +27,7 @@
           videoId: 'IYFuz8d8WzQ',
           playerVars: {
                    'autoplay':1,
-                   'controls':1,
+                   'controls':0,
                    'showinfo':0,
                    'modestbranding':1,
                    'rel':0},
@@ -43,7 +43,7 @@
           videoId: 'MstFsNp-8m0',
           playerVars: {
                        'autoplay':0,
-                       'controls':1,
+                       'controls':0,
                        'showinfo':0,
                        'modestbranding':1,
                        'rel':0},
@@ -87,10 +87,10 @@
         }
       });
 
-      var vaultWaypt = new Waypoint({
-        element: $("#vault"),
+      var floorplanWaypt = new Waypoint({
+        element: $("#floorplan"),
         handler: function(){
-          console.log("vault waypt");
+          console.log("floorplan waypt");
           main_player.pauseVideo();
         }
       })
