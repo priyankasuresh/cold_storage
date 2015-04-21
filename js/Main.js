@@ -87,7 +87,8 @@ function box(x,y){
   
     var count=0;
     var vaultdata = {};
- 
+
+    // this seems to be handling the "next" and "prev" vault data loading, not sure why [RB]
     $.getJSON('data/coldstorage.json', function(chone) {
     count=chone.length;
     var firstIndex=0,lastIndex=0;
