@@ -40,7 +40,7 @@
       main_player = new YT.Player('main_player', {
           height: '563',
           width: '1000',
-          videoId: 'MstFsNp-8m0',
+          videoId: 'quIRtrq9K-E',
           playerVars: {
                        'autoplay':0,
                        'controls':0,
