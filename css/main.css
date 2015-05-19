@@ -47,6 +47,11 @@
 
 /* Vault section */
 
+/* vault listing */
+#vaultlist ul{
+	text-decoration: "";
+}
+
 /* title */
 #player-digital-name-one{
 	margin-top: 1em;

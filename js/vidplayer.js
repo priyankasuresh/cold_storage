@@ -140,6 +140,7 @@ function onMainPlayerStateChange(event) {
           $.each(chone, function(i,val) {
             if(!vaultdata[val.chapter]) vaultdata[val.chapter] = [];
             vaultdata[val.chapter].push(val);
+
           });
 
           // run after JSON has loaded
@@ -152,8 +153,15 @@ function onMainPlayerStateChange(event) {
             $("#fp"+currentModule).attr("src", "./img/FloorplanNav/"+currentModule+"_on.jpg");
             //$(".chapter").hide();
             $("."+modulename).show();
+
+            // list of all vault items
+            $("#vaultlist").append($("<ul></ul>").attr({"class": "list-unstyled"}));
+            for (var i = 0; i < vaultdata[5].length; i++){
+              $("#vaultlist ul").append($("<li>"+vaultdata[5][i].item_title+"</li>").attr("class","item_title"));
+            }
+            
             $("#currentembed").html("");
-            var v = vaultdata[module][0]; 
+            var v = vaultdata[module][0];  
             $("#currentembed").append($("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.location));
             console.log(v);
             $('#player-digital-title-one').html(v.description);
