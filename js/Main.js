@@ -89,13 +89,14 @@ function box(x,y){
     var vaultdata = {};
 
     // this seems to be handling the "next" and "prev" vault data loading, not sure why [RB]
+    // seems to be generating the vaultdata object used in vidplayer.js
     $.getJSON('data/coldstorage.json', function(chone) {
-    count=chone.length;
+     count=chone.length;
     var firstIndex=0,lastIndex=0;
     $.each(chone, function(i,val) {
       if(!vaultdata[val.chapter]) vaultdata[val.chapter] = [];
       vaultdata[val.chapter].push(val);
-    
+
     });
   });
 

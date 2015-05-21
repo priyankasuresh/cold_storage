@@ -147,23 +147,22 @@ function onMainPlayerStateChange(event) {
           if(module != currentModule) {
             $("#fp"+currentModule).attr("src", "./img/FloorplanNav/"+currentModule+"_off.jpg");
             currentModule = module;
-            console.log("MODULE CHANGE");
-            console.log("module "+currentModule);
-            console.log(modulename);
+            console.log("MODULE CHANGE: "+ currentModule);
             $("#fp"+currentModule).attr("src", "./img/FloorplanNav/"+currentModule+"_on.jpg");
             //$(".chapter").hide();
             $("."+modulename).show();
 
             // list of all vault items
+            $("#vaultlist").empty();
             $("#vaultlist").append($("<ul></ul>").attr({"class": "list-unstyled"}));
-            for (var i = 0; i < vaultdata[5].length; i++){
-              $("#vaultlist ul").append($("<li>"+vaultdata[5][i].item_title+"</li>").attr("class","item_title"));
+            for (var i = 0; i < vaultdata[currentModule].length; i++){
+              $("#vaultlist ul").append($("<li>"+vaultdata[currentModule][i].item_title+"</li>").attr("class","item_title"));
             }
-            
+            $("#vaultlist ul li:nth-child(1)").addClass("item_current");
+
             $("#currentembed").html("");
             var v = vaultdata[module][0];  
             $("#currentembed").append($("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.location));
-            console.log(v);
             $('#player-digital-title-one').html(v.description);
             $('#player-digital-name-one').html(v.item_title);
           }
@@ -178,6 +177,7 @@ function onMainPlayerStateChange(event) {
   $("#next-bt").click(function() {
       clickIndex = clickIndex + 1;;       
       if(clickIndex >= vaultdata[currentModule].length) clickIndex = 0;
+
     $("#currentembed").html("");
     var v = vaultdata[currentModule][clickIndex];
     $("#currentembed").append($("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.location));
@@ -187,6 +187,8 @@ function onMainPlayerStateChange(event) {
       vaultshow.style.display = "none";
       var infoshow=document.getElementById("infobox");
       infoshow.style.display = "block";
+      $("#vaultlist ul li:nth-child("+(clickIndex)+")").removeClass("item_current");
+      $("#vaultlist ul li:nth-child("+(clickIndex+1)+")").addClass("item_current");
   });
 
   $("#prev-bt").click(function() {
@@ -201,6 +203,8 @@ function onMainPlayerStateChange(event) {
       vaultshow.style.display = "none";
       var infoshow=document.getElementById("infobox");
       infoshow.style.display = "block";
+      $("#vaultlist ul li:nth-child("+(clickIndex+2)+")").removeClass("item_current");
+      $("#vaultlist ul li:nth-child("+(clickIndex+1)+")").addClass("item_current");
   });
 }
 }
