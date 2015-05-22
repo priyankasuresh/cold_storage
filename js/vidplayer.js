@@ -158,9 +158,10 @@ function onMainPlayerStateChange(event) {
             for (var i = 0; i < vaultdata[currentModule].length; i++){
               $("#vaultlist ul").append($("<li>"+vaultdata[currentModule][i].item_title+"</li>")
                 .attr("class","item_title")
+                .data("index", i)
                 .click(function(){
-                  console.log("click added to: "+currentModule+", "+i);
-                  displayItem(currentModule, i);
+                  clickIndex = $(this).data("index");
+                  displayItem(currentModule, clickIndex);
                 })
               );
             }
@@ -181,33 +182,31 @@ function onMainPlayerStateChange(event) {
 
   var clickIndex = 0;
   $("#next-bt").click(function() {
-    $("#vaultlist ul li:nth-child("+(clickIndex+1)+")").removeClass("item_current");
     clickIndex = clickIndex + 1;;       
     if(clickIndex >= vaultdata[currentModule].length) clickIndex = 0;
-    $("#vaultlist ul li:nth-child("+(clickIndex+1)+")").addClass("item_current");
     displayItem(currentModule, clickIndex);
   });
 
   $("#prev-bt").click(function() {
-      $("#vaultlist ul li:nth-child("+(clickIndex+1)+")").removeClass("item_current");
       clickIndex = clickIndex - 1;;       
       if(clickIndex < 0) clickIndex = vaultdata[currentModule].length - 1;
-      $("#vaultlist ul li:nth-child("+(clickIndex+1)+")").addClass("item_current");
       displayItem(currentModule, clickIndex);
   });
 }
 }
 
 function displayItem(module, index){
+  $("#vaultlist ul li").removeClass("item_current");
   $("#currentembed").html("");
-      var v = vaultdata[module][index];
-      $("#currentembed").append($("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.location));
-      $('#player-digital-title-one').html(v.description);
-      $('#player-digital-name-one').html(v.item_title);
-      var vaultshow=document.getElementById("vault_null");
-      vaultshow.style.display = "none";
-      var infoshow=document.getElementById("infobox");
-      infoshow.style.display = "block";
+  var v = vaultdata[module][index];
+  $("#currentembed").append($("<a></a>") .attr({"class":"tracks","itemid":v.itemid+'_tracks',"href":v.itemid,"data-file":v.trackFile}).html(v.location));
+  $('#player-digital-title-one').html(v.description);
+  $('#player-digital-name-one').html(v.item_title);
+  var vaultshow=document.getElementById("vault_null");
+  vaultshow.style.display = "none";
+  var infoshow=document.getElementById("infobox");
+  infoshow.style.display = "block";
+  $("#vaultlist ul li:nth-child("+(index+1)+")").addClass("item_current");
 }
 
   function stopVideo() {
